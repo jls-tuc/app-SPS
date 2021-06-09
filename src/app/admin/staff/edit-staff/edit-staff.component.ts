@@ -10,7 +10,7 @@ export class EditStaffComponent {
   formdata = {
     first: "Pooja",
     last: "Sarma",
-    gender: "Female",
+    gender: "Femenino",
     mobile: "123456789",
     password: "123",
     conformPassword: "123",

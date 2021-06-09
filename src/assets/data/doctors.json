@@ -6,7 +6,7 @@
     "date": "2018-02-25T14:22:18Z",
     "department": "Urology",
     "mobile": "1234567890",
-    "name": "Dr.John Doe",
+    "name": "Dr.Mario Martínez",
     "degree": "MBBS,MS"
   },
   {
@@ -17,18 +17,18 @@
     "date": "2018-02-12T14:22:18Z",
     "department": "Dentist",
     "mobile": "1234567890",
-    "name": "Dr.Sarah Smith",
+    "name": "Dr. Carlos Ferrera",
     "degree": "BHMS"
   },
   {
     "id": "003",
     "img": "assets/images/user/user3.jpg",
-    "specialization": "Cholera",
+    "specialization": "Cólera",
     "email": "test@email.com",
     "date": "2018-02-25T14:22:18Z",
     "department": "General",
     "mobile": "1234567890",
-    "name": "Dr.Rajesh",
+    "name": "Dra. Natalia Martinez",
     "degree": "MBBS,MD"
   },
   {
@@ -39,7 +39,7 @@
     "date": "2018-02-25T14:22:18Z",
     "department": "Urology",
     "mobile": "1234567890",
-    "name": "Dr.Jay Soni",
+    "name": "Dr.Sonia Salto",
     "degree": "MBBS,MS"
   },
   {
@@ -50,7 +50,7 @@
     "date": "2018-02-25T14:22:18Z",
     "department": "Gynecology",
     "mobile": "1234567890",
-    "name": "Dr.Rajesh",
+    "name": "Dra. Natalia Martinez",
     "degree": "MBBS,MS"
   },
   {
@@ -61,7 +61,7 @@
     "date": "2018-02-25T14:22:18Z",
     "department": "Oncology",
     "mobile": "1234567890",
-    "name": "Dr.John Doe",
+    "name": "Dr.Mario Martínez",
     "degree": "MBBS,MS"
   },
   {
@@ -72,7 +72,7 @@
     "date": "2018-02-25T14:22:18Z",
     "department": "Otolaryngology",
     "mobile": "1234567890",
-    "name": "Dr.Cara Stevens",
+    "name": "Dr.Mara Santangello",
     "degree": "MBBS,MS"
   },
   {
@@ -83,7 +83,7 @@
     "date": "2018-02-25T14:22:18Z",
     "department": "Radiology",
     "mobile": "1234567890",
-    "name": "Dr.Jay Soni",
+    "name": "Dr.Sonia Salto",
     "degree": "MBBS,MS"
   },
   {
@@ -105,7 +105,7 @@
     "date": "2018-02-25T14:22:18Z",
     "department": "Dentist",
     "mobile": "1234567890",
-    "name": "Dr.Airi Satou",
+    "name": "Dr.Damián Sosa",
     "degree": "MBBS,MS"
   },
   {
@@ -116,7 +116,7 @@
     "date": "2018-02-25T14:22:18Z",
     "department": "General",
     "mobile": "1234567890",
-    "name": "Dr.Jay Soni",
+    "name": "Dr.Sonia Salto",
     "degree": "MBBS,MS"
   },
   {
@@ -127,7 +127,7 @@
     "date": "2018-02-25T14:22:18Z",
     "department": "Urology",
     "mobile": "1234567890",
-    "name": "Dr.Cara Stevens",
+    "name": "Dr.Mara Santangello",
     "degree": "MBBS,MS"
   },
   {
@@ -138,18 +138,18 @@
     "date": "2018-02-25T14:22:18Z",
     "department": "Urology",
     "mobile": "1234567890",
-    "name": "Dr.Sarah Smith",
+    "name": "Dr. Carlos Ferrera",
     "degree": "BHMS"
   },
   {
     "id": "014",
     "img": "assets/images/user/user3.jpg",
-    "specialization": "Cholera",
+    "specialization": "Cólera",
     "email": "test@email.com",
     "date": "2018-02-25T14:22:18Z",
     "department": "Gynecology",
     "mobile": "1234567890",
-    "name": "Dr.Ashton Cox",
+    "name": "Dr.Pedro Candel",
     "degree": "MBBS,MD"
   },
   {
@@ -160,7 +160,7 @@
     "date": "2018-02-25T14:22:18Z",
     "department": "Otolaryngology",
     "mobile": "1234567890",
-    "name": "Dr.Jay Soni",
+    "name": "Dr.Sonia Salto",
     "degree": "MBBS,MS"
   },
   {

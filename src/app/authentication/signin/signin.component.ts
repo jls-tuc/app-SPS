@@ -19,7 +19,7 @@ export class SigninComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private authService: AuthService
-  ) {}
+  ) { }
 
   spinnerButtonOptions: MatProgressButtonOptions = {
     active: false,
@@ -32,9 +32,9 @@ export class SigninComponent implements OnInit {
     fullWidth: false,
     disabled: false,
     mode: "indeterminate",
-    buttonIcon: {
+    /* buttonIcon: {
       fontIcon: "favorite",
-    },
+    }, */
   };
   ngOnInit() {
     this.authForm = this.formBuilder.group({

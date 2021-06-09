@@ -1,505 +1,505 @@
 [
     {
         "name": "Ethel Price",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Johnson and Partners",
         "age": 22
     },
     {
         "name": "Claudine Neal",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Sealoud",
         "age": 55
     },
     {
         "name": "Beryl Rice",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Velity",
         "age": 67
     },
     {
         "name": "Wilder Gonzales",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Geekko"
     },
     {
         "name": "Georgina Schultz",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Suretech"
     },
     {
         "name": "Carroll Buchanan",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Ecosys"
     },
     {
         "name": "Valarie Atkinson",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Hopeli"
     },
     {
         "name": "Schroeder Mathews",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Polarium"
     },
     {
         "name": "Lynda Mendoza",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Dogspa"
     },
     {
         "name": "Sarah Massey",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Bisba"
     },
     {
         "name": "Robles Boyle",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Comtract"
     },
     {
         "name": "Evans Hickman",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Parleynet"
     },
     {
         "name": "Dawson Barber",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Dymi"
     },
     {
         "name": "Bruce Strong",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Xyqag"
     },
     {
         "name": "Nellie Whitfield",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Exospace"
     },
     {
         "name": "Jackson Macias",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Aquamate"
     },
     {
         "name": "Pena Pena",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Quarx"
     },
     {
         "name": "Lelia Gates",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Proxsoft"
     },
     {
         "name": "Letitia Vasquez",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Slumberia"
     },
     {
         "name": "Trevino Moreno",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Conjurica"
     },
     {
         "name": "Barr Page",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Apex"
     },
     {
         "name": "Kirkland Merrill",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Utara"
     },
     {
         "name": "Blanche Conley",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Imkan"
     },
     {
         "name": "Atkins Dunlap",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Comveyor"
     },
     {
         "name": "Everett Foreman",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Maineland"
     },
     {
         "name": "Gould Randolph",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Intergeek"
     },
     {
         "name": "Kelli Leon",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Verbus"
     },
     {
         "name": "Freda Mason",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Accidency"
     },
     {
         "name": "Tucker Maxwell",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Lumbrex"
     },
     {
         "name": "Yvonne Parsons",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Zolar"
     },
     {
         "name": "Woods Key",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Bedder"
     },
     {
         "name": "Stephens Reilly",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Acusage"
     },
     {
         "name": "Mcfarland Sparks",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Comvey"
     },
     {
         "name": "Jocelyn Sawyer",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Fortean"
     },
     {
         "name": "Renee Barr",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Kiggle"
     },
     {
         "name": "Gaines Beck",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Sequitur"
     },
     {
         "name": "Luisa Farrell",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Cinesanct"
     },
     {
         "name": "Robyn Strickland",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Obones"
     },
     {
         "name": "Roseann Jarvis",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Aquazure"
     },
     {
         "name": "Johnston Park",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Netur"
     },
     {
         "name": "Wong Craft",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Opticall"
     },
     {
         "name": "Merritt Cole",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Techtrix"
     },
     {
         "name": "Dale Byrd",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Kneedles"
     },
     {
         "name": "Sara Delgado",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Netagy"
     },
     {
         "name": "Alisha Myers",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Intradisk"
     },
     {
         "name": "Felecia Smith",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Futurity"
     },
     {
         "name": "Neal Harvey",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Pyramax"
     },
     {
         "name": "Nola Miles",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Sonique"
     },
     {
         "name": "Herring Pierce",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Geeketron"
     },
     {
         "name": "Shelley Rodriquez",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Bostonic"
     },
     {
         "name": "Cora Chase",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Isonus"
     },
     {
         "name": "Mckay Santos",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Amtas"
     },
     {
         "name": "Hilda Crane",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Jumpstack"
     },
     {
         "name": "Jeanne Lindsay",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Genesynk"
     },
     {
         "name": "Frye Sharpe",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Eplode"
     },
     {
         "name": "Velma Fry",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Ronelon"
     },
     {
         "name": "Reyna Espinoza",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Prismatic"
     },
     {
         "name": "Spencer Sloan",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Comverges"
     },
     {
         "name": "Graham Marsh",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Medifax"
     },
     {
         "name": "Hale Boone",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Digial"
     },
     {
         "name": "Wiley Hubbard",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Zensus"
     },
     {
         "name": "Blackburn Drake",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Frenex"
     },
     {
         "name": "Franco Hunter",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Rockabye"
     },
     {
         "name": "Barnett Case",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Norali"
     },
     {
         "name": "Alexander Foley",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Geekosis"
     },
     {
         "name": "Lynette Stein",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Macronaut"
     },
     {
         "name": "Anthony Joyner",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Senmei"
     },
     {
         "name": "Garrett Brennan",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Bluegrain"
     },
     {
         "name": "Betsy Horton",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Zilla"
     },
     {
         "name": "Patton Small",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Genmex"
     },
     {
         "name": "Lakisha Huber",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Insource"
     },
     {
         "name": "Lindsay Avery",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Unq"
     },
     {
         "name": "Ayers Hood",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Accuprint"
     },
     {
         "name": "Torres Durham",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Uplinx"
     },
     {
         "name": "Vincent Hernandez",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Talendula"
     },
     {
         "name": "Baird Ryan",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Aquasseur"
     },
     {
         "name": "Georgia Mercer",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Skyplex"
     },
     {
         "name": "Francesca Elliott",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Nspire"
     },
     {
         "name": "Lyons Peters",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Quinex"
     },
     {
         "name": "Kristi Brewer",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Oronoko"
     },
     {
         "name": "Tonya Bray",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Insuron"
     },
     {
         "name": "Valenzuela Huff",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Applideck"
     },
     {
         "name": "Tiffany Anderson",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Zanymax"
     },
     {
         "name": "Jerri King",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Eventex"
     },
     {
         "name": "Rocha Meadows",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Goko"
     },
     {
         "name": "Marcy Green",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Pharmex"
     },
     {
         "name": "Kirk Cross",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Portico"
     },
     {
         "name": "Hattie Mullen",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Zilencio"
     },
     {
         "name": "Deann Bridges",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Equitox"
     },
     {
         "name": "Chaney Roach",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Qualitern"
     },
     {
         "name": "Consuelo Dickson",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Poshome"
     },
     {
         "name": "Billie Rowe",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Cemention"
     },
     {
         "name": "Bean Donovan",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Mantro"
     },
     {
         "name": "Lancaster Patel",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Krog"
     },
     {
         "name": "Rosa Dyer",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Netility"
     },
     {
         "name": "Christine Compton",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Bleeko"
     },
     {
         "name": "Milagros Finch",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Handshake"
     },
     {
         "name": "Ericka Alvarado",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Lyrichord"
     },
     {
         "name": "Sylvia Sosa",
-        "gender": "female",
+        "gender": "femenino",
         "company": "Circum"
     },
     {
         "name": "Humphrey Curtis",
-        "gender": "male",
+        "gender": "masculino",
         "company": "Corepan"
     }
 ]

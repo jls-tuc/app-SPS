@@ -75,7 +75,7 @@ export class DashboardComponent implements OnInit {
   public restRateChartOptions: Partial<restRateChartOptions>;
   public performanceRateChartOptions: Partial<performanceRateChartOptions>;
 
-  constructor() {}
+  constructor() { }
   ngOnInit() {
     this.chart1();
     this.chart2();
@@ -86,11 +86,11 @@ export class DashboardComponent implements OnInit {
     this.areaChartOptions = {
       series: [
         {
-          name: "New Patients",
+          name: "Pacientes Nuevos",
           data: [31, 40, 28, 51, 42, 85, 77],
         },
         {
-          name: "Old Patients",
+          name: "Pacientes Viejos",
           data: [11, 32, 45, 32, 34, 52, 41],
         },
       ],

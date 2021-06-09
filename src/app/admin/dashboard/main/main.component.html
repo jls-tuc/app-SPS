@@ -18,7 +18,7 @@
     </div>
     <!-- Widgets -->
     <div class="row">
-      <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="card card-statistic-2">
           <div class="clearfix">
             <div class="card-icon shadow-primary bg-purple">
@@ -26,7 +26,7 @@
             </div>
             <div class="card-right">
               <div>
-                <h5 class="pull-right">Appointments</h5>
+                <h5 class="pull-right">Turnos</h5>
               </div>
               <div class="m-r-10 m-l-10">
                 <h3 class="font-weight-bold pull-right mb-0"> 650</h3>
@@ -40,7 +40,7 @@
           </div>
         </div>
       </div>
-      <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="card card-statistic-2">
           <div class="clearfix">
             <div class="card-icon shadow-primary bg-orange">
@@ -48,7 +48,7 @@
             </div>
             <div class="card-right">
               <div>
-                <h5 class="pull-right">Operations</h5>
+                <h5 class="pull-right">Operaciones</h5>
               </div>
               <div class="m-r-10 m-l-10">
                 <h3 class="font-weight-bold pull-right mb-0"> 54</h3>
@@ -62,7 +62,7 @@
           </div>
         </div>
       </div>
-      <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="card card-statistic-2">
           <div class="clearfix">
             <div class="card-icon shadow-primary bg-green">
@@ -70,7 +70,7 @@
             </div>
             <div class="card-right">
               <div>
-                <h5 class="pull-right">New Patients</h5>
+                <h5 class="pull-right">Pacientes Nuevos</h5>
               </div>
               <div class="m-r-10 m-l-10">
                 <h3 class="font-weight-bold pull-right mb-0"> 129</h3>
@@ -84,7 +84,7 @@
           </div>
         </div>
       </div>
-      <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <!-- <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="card card-statistic-2">
           <div class="clearfix">
             <div class="card-icon shadow-primary bg-blue">
@@ -92,7 +92,7 @@
             </div>
             <div class="card-right">
               <div>
-                <h5 class="pull-right">Earning</h5>
+                <h5 class="pull-right">Ingresos</h5>
               </div>
               <div class="m-r-10 m-l-10">
                 <h3 class="font-weight-bold pull-right mb-0"> $20,125</h3>
@@ -105,7 +105,7 @@
             </canvas>
           </div>
         </div>
-      </div>
+      </div> -->
 
     </div>
     <!-- #END# Widgets -->
@@ -114,14 +114,14 @@
         <div class="card">
           <div class="header">
             <h2>
-              Hospital Survay</h2>
+              Indices Hospitalarios</h2>
             <button mat-button [matMenuTriggerFor]="menu" class="header-dropdown">
               <mat-icon>more_vert</mat-icon>
             </button>
             <mat-menu #menu="matMenu">
-              <button mat-menu-item>Action</button>
-              <button mat-menu-item>Another action</button>
-              <button mat-menu-item>Something else here</button>
+              <button mat-menu-item>Descargar XLS</button>
+              <button mat-menu-item>Descargar PDF</button>
+              <button mat-menu-item>Imprimir</button>
             </mat-menu>
           </div>
           <div class="body">
@@ -135,14 +135,14 @@
       <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
         <div class="card">
           <div class="header">
-            <h2>Common Diseases Report</h2>
+            <h2>Informe de Enfermedades Comunes</h2>
             <button mat-button [matMenuTriggerFor]="menu" class="header-dropdown">
               <mat-icon>more_vert</mat-icon>
             </button>
             <mat-menu #menu="matMenu">
-              <button mat-menu-item>Action</button>
-              <button mat-menu-item>Another action</button>
-              <button mat-menu-item>Something else here</button>
+              <button mat-menu-item>Descargar XLS</button>
+              <button mat-menu-item>Descargar PDF</button>
+              <button mat-menu-item>Imprimir</button>
             </mat-menu>
           </div>
           <div class="body">
@@ -160,14 +160,14 @@
         <div class="card">
           <div class="header">
             <h2>
-              Booked Appointment</h2>
+              Turno Reservado</h2>
             <button mat-button [matMenuTriggerFor]="menu" class="header-dropdown">
               <mat-icon>more_vert</mat-icon>
             </button>
             <mat-menu #menu="matMenu">
-              <button mat-menu-item>Action</button>
-              <button mat-menu-item>Another action</button>
-              <button mat-menu-item>Something else here</button>
+              <button mat-menu-item>Descargar XLS</button>
+              <button mat-menu-item>Descargar PDF</button>
+              <button mat-menu-item>Imprimir</button>
             </mat-menu>
           </div>
           <div class="tableBody">
@@ -176,11 +176,11 @@
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>Patient Name</th>
-                    <th>Assigned Doctor</th>
-                    <th>Date</th>
-                    <th>Diseases</th>
-                    <th>Actions </th>
+                    <th>Nombre del Paciente</th>
+                    <th>Doctor Asignado</th>
+                    <th>Día</th>
+                    <th>Enfermedades</th>
+                    <th>Acciones </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -188,11 +188,11 @@
                     <td class="table-img">
                       <img src="assets/images/user/user1.jpg" alt="">
                     </td>
-                    <td>John Doe</td>
-                    <td><a href="mailto:test@gmail.com"> Dr.Jacob Ryan </a></td>
+                    <td>Mario Martínez</td>
+                    <td><a href="mailto:test@gmail.com"> Dr. Juan Pérez </a></td>
                     <td>12/05/2016 </td>
                     <td>
-                      <div class="badge col-red">Fever</div>
+                      <div class="badge col-red">Fiebre</div>
                     </td>
                     <td>
                       <button mat-icon-button>
@@ -207,11 +207,11 @@
                     <td class="table-img">
                       <img src="assets/images/user/user2.jpg" alt="">
                     </td>
-                    <td>Sarah Smith</td>
-                    <td><a href="mailto:test@gmail.com"> Dr.Rajesh </a></td>
+                    <td>Carolina Fernández</td>
+                    <td><a href="mailto:test@gmail.com"> Dra. Natalia Martinez </a></td>
                     <td>12/05/2016 </td>
                     <td>
-                      <div class="badge col-green">Cholera</div>
+                      <div class="badge col-green">COVID</div>
                     </td>
                     <td>
                       <button mat-icon-button>
@@ -226,11 +226,11 @@
                     <td class="table-img">
                       <img src="assets/images/user/user3.jpg" alt="">
                     </td>
-                    <td>Airi Satou</td>
-                    <td><a href="mailto:test@gmail.com"> Dr.Jay Soni </a></td>
+                    <td>Damián Sosa</td>
+                    <td><a href="mailto:test@gmail.com"> Dr. José Córdoba </a></td>
                     <td>12/05/2016 </td>
                     <td>
-                      <div class="badge col-purple">Jaundice</div>
+                      <div class="badge col-purple">Ictericia</div>
                     </td>
                     <td>
                       <button mat-icon-button>
@@ -246,10 +246,10 @@
                       <img src="assets/images/user/user4.jpg" alt="">
                     </td>
                     <td>Angelica Ramos</td>
-                    <td><a href="mailto:test@gmail.com"> Dr.John Deo </a></td>
+                    <td><a href="mailto:test@gmail.com"> Dr. Claudio López </a></td>
                     <td>12/05/2016 </td>
                     <td>
-                      <div class="badge col-purple">Typhod</div>
+                      <div class="badge col-purple">Migraña</div>
                     </td>
                     <td>
                       <button mat-icon-button>
@@ -264,11 +264,11 @@
                     <td class="table-img">
                       <img src="assets/images/user/user5.jpg" alt="">
                     </td>
-                    <td>Ashton Cox</td>
-                    <td><a href="mailto:test@gmail.com"> Dr.Megha Trivedi </a></td>
+                    <td>Pedro Candel</td>
+                    <td><a href="mailto:test@gmail.com"> Dr. Carlos Entrena </a></td>
                     <td>12/05/2016 </td>
                     <td>
-                      <div class="badge col-orange">Maleria</div>
+                      <div class="badge col-orange">Malaria</div>
                     </td>
                     <td>
                       <button mat-icon-button>
@@ -283,11 +283,11 @@
                     <td class="table-img">
                       <img src="assets/images/user/user8.jpg" alt="">
                     </td>
-                    <td>Cara Stevens</td>
-                    <td><a href="mailto:test@gmail.com"> Dr.Sarah Smith </a></td>
+                    <td>Mara Santangello</td>
+                    <td><a href="mailto:test@gmail.com"> Dr. Carlos Ferrera </a></td>
                     <td>12/05/2016 </td>
                     <td>
-                      <div class="badge col-cyan">Infection</div>
+                      <div class="badge col-cyan">Infección</div>
                     </td>
                     <td>
                       <button mat-icon-button>
@@ -308,7 +308,7 @@
         <div class="card">
           <div class="header">
             <h2>
-              Doctors List</h2>
+              Lista de Doctores</h2>
             <button mat-button [matMenuTriggerFor]="menu" class="header-dropdown">
               <mat-icon>more_vert</mat-icon>
             </button>
@@ -324,8 +324,8 @@
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>Doctor Name</th>
-                    <th>Status</th>
+                    <th>Nombre del Doctor</th>
+                    <th>Estado</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -334,12 +334,12 @@
                       <img src="assets/images/user/user5.jpg" alt="">
                     </td>
                     <td>
-                      <div class="media-title"><a href="mailto:test@gmail.com"> Dr.Jay Soni
+                      <div class="media-title"><a href="mailto:test@gmail.com"> Dr. José Córdoba
                         </a></div>
                       <div class="text-job font-11">(MBBS,MD)</div>
                     </td>
                     <td>
-                      <div class="badge col-green">Available</div>
+                      <div class="badge col-green">Disponible</div>
                     </td>
                   </tr>
                   <tr>
@@ -347,12 +347,12 @@
                       <img src="assets/images/user/user6.jpg" alt="">
                     </td>
                     <td>
-                      <div class="media-title"><a href="mailto:test@gmail.com"> Dr.Sarah Smith
+                      <div class="media-title"><a href="mailto:test@gmail.com"> Dr. Carlos Ferrera
                         </a></div>
                       <div class="text-job font-11">(BDS,MDS)</div>
                     </td>
                     <td>
-                      <div class="badge col-red">Absend</div>
+                      <div class="badge col-red">Ausente</div>
                     </td>
                   </tr>
                   <tr>
@@ -360,12 +360,12 @@
                       <img src="assets/images/user/user3.jpg" alt="">
                     </td>
                     <td>
-                      <div class="media-title"><a href="mailto:test@gmail.com">Dr.Megha Trivedi
+                      <div class="media-title"><a href="mailto:test@gmail.com">Dr. Carlos Entrena
                         </a></div>
                       <div class="text-job font-11">(BHMS)</div>
                     </td>
                     <td>
-                      <div class="badge col-green">Available</div>
+                      <div class="badge col-green">Disponible</div>
                     </td>
                   </tr>
                   <tr>
@@ -373,12 +373,12 @@
                       <img src="assets/images/user/user2.jpg" alt="">
                     </td>
                     <td>
-                      <div class="media-title"><a href="mailto:test@gmail.com"> Dr.John Deo
+                      <div class="media-title"><a href="mailto:test@gmail.com"> Dr. Claudio López
                         </a></div>
                       <div class="text-job font-11">(MBBS,MS)</div>
                     </td>
                     <td>
-                      <div class="badge col-green">Available</div>
+                      <div class="badge col-green">Disponible</div>
                     </td>
                   </tr>
                   <tr>
@@ -386,12 +386,12 @@
                       <img src="assets/images/user/user1.jpg" alt="">
                     </td>
                     <td>
-                      <div class="media-title"><a href="mailto:test@gmail.com"> Dr.Jacob Ryan
+                      <div class="media-title"><a href="mailto:test@gmail.com"> Dr. Juan Pérez
                         </a></div>
                       <div class="text-job font-11">(MBBS,MD)</div>
                     </td>
                     <td>
-                      <div class="badge col-red">Absend</div>
+                      <div class="badge col-red">Ausente</div>
                     </td>
                   </tr>
                   <tr>
@@ -399,12 +399,12 @@
                       <img src="assets/images/user/user8.jpg" alt="">
                     </td>
                     <td>
-                      <div class="media-title"><a href="mailto:test@gmail.com"> Dr.Jay Soni
+                      <div class="media-title"><a href="mailto:test@gmail.com"> Dr. José Córdoba
                         </a></div>
                       <div class="text-job font-11">(MBBS)</div>
                     </td>
                     <td>
-                      <div class="badge col-green">Available</div>
+                      <div class="badge col-green">Disponible</div>
                     </td>
                   </tr>
                 </tbody>
@@ -436,11 +436,11 @@
                   <tr>
                     <th>#</th>
                     <th>Parient Name</th>
-                    <th>Doctors Team</th>
+                    <th>Equipo de Doctores</th>
                     <th>Date Of Operation</th>
                     <th>Report</th>
                     <th>Diseases</th>
-                    <th>Actions</th>
+                    <th>Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -499,7 +499,7 @@
                     <td>
                       <i class="far fa-file-pdf tbl-pdf"></i>
                     </td>
-                    <td>Fracture</td>
+                    <td>Fractura</td>
                     <td>
                       <button mat-icon-button class="btn-tbl-edit">
                         <mat-icon>edit</mat-icon>
@@ -513,7 +513,7 @@
                     <td class="table-img">
                       <img src="assets/images/user/user3.jpg" alt="">
                     </td>
-                    <td>Mark Hay</td>
+                    <td>Victoria Virgili</td>
                     <td class="text-truncate">
                       <ul class="list-unstyled order-list">
                         <li class="avatar avatar-sm"><img class="rounded-circle" src="assets/images/user/user2.jpg"
@@ -533,7 +533,7 @@
                     <td>
                       <i class="far fa-file-pdf tbl-pdf"></i>
                     </td>
-                    <td>Cataract surgery</td>
+                    <td>Cirugía de cataratas</td>
                     <td>
                       <button mat-icon-button class="btn-tbl-edit">
                         <mat-icon>edit</mat-icon>
@@ -547,7 +547,7 @@
                     <td class="table-img">
                       <img src="assets/images/user/user6.jpg" alt="">
                     </td>
-                    <td>Mark Hay</td>
+                    <td>Victoria Virgili</td>
                     <td class="text-truncate">
                       <ul class="list-unstyled order-list">
                         <li class="avatar avatar-sm"><img class="rounded-circle" src="assets/images/user/user5.jpg"
@@ -567,7 +567,7 @@
                     <td>
                       <i class="far fa-file-pdf tbl-pdf"></i>
                     </td>
-                    <td>Cholecystectomy</td>
+                    <td>Colecistectomía</td>
                     <td>
                       <button mat-icon-button class="btn-tbl-edit">
                         <mat-icon>edit</mat-icon>
@@ -581,7 +581,7 @@
                     <td class="table-img">
                       <img src="assets/images/user/user1.jpg" alt="">
                     </td>
-                    <td>Mark Hay</td>
+                    <td>Victoria Virgili</td>
                     <td class="text-truncate">
                       <ul class="list-unstyled order-list">
                         <li class="avatar avatar-sm"><img class="rounded-circle" src="assets/images/user/user2.jpg"
@@ -598,7 +598,7 @@
                     <td>
                       <i class="far fa-file-pdf tbl-pdf"></i>
                     </td>
-                    <td>Hysterectomy</td>
+                    <td>Histerectomía</td>
                     <td>
                       <button mat-icon-button class="btn-tbl-edit">
                         <mat-icon>edit</mat-icon>
@@ -612,7 +612,7 @@
                     <td class="table-img">
                       <img src="assets/images/user/user2.jpg" alt="">
                     </td>
-                    <td>Mark Hay</td>
+                    <td>Victoria Virgili</td>
                     <td class="text-truncate">
                       <ul class="list-unstyled order-list">
                         <li class="avatar avatar-sm"><img class="rounded-circle" src="assets/images/user/user6.jpg"
@@ -632,7 +632,7 @@
                     <td>
                       <i class="far fa-file-pdf tbl-pdf"></i>
                     </td>
-                    <td>back pain surgery</td>
+                    <td>Cirugía de dolor de espalda</td>
                     <td>
                       <button mat-icon-button class="btn-tbl-edit">
                         <mat-icon>edit</mat-icon>

@@ -12,7 +12,7 @@
                 <i class="fas fa-home"></i> Home</a>
             </li>
             <li class="breadcrumb-item bcrumb-2">
-              <a href="#" onClick="return false;">Doctors</a>
+              <a href="#" onClick="return false;">Doctores</a>
             </li>
             <li class="breadcrumb-item active">Add</li>
           </ul>
@@ -31,16 +31,16 @@
               <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
                   <mat-form-field class="example-full-width mb-3" appearance="outline">
-                    <mat-label>First name</mat-label>
+                    <mat-label>Nombre</mat-label>
                     <input matInput formControlName="first" required>
                     <mat-error *ngIf="docForm.get('first').hasError('required')">
-                      First name is required
+                      Por favor escriba el Nombre
                     </mat-error>
                   </mat-form-field>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
                   <mat-form-field class="example-full-width mb-3" appearance="outline">
-                    <mat-label>Last name</mat-label>
+                    <mat-label>Apellido</mat-label>
                     <input matInput formControlName="last">
                   </mat-form-field>
                 </div>
@@ -48,23 +48,23 @@
               <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
                   <mat-form-field class="example-full-width mb-3" appearance="outline">
-                    <mat-label>Gender</mat-label>
+                    <mat-label>Género</mat-label>
                     <mat-select formControlName="gender" required>
-                      <mat-option [value]="'Male'">
-                        Male
+                      <mat-option [value]="'Masculino'">
+                        Masculino
                       </mat-option>
-                      <mat-option [value]="'Female'">
-                        Female
+                      <mat-option [value]="'Femenino'">
+                        Femenino
                       </mat-option>
                     </mat-select>
                     <mat-error *ngIf="docForm.get('gender').hasError('required')">
-                      Gender is required
+                      Por favor seleccione un género
                     </mat-error>
                   </mat-form-field>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
                   <mat-form-field class="example-full-width mb-3" appearance="outline">
-                    <mat-label>Mobile</mat-label>
+                    <mat-label>Teléfono Móbil</mat-label>
                     <input matInput formControlName="mobile" type="number" required>
                   </mat-form-field>
                 </div>
@@ -122,7 +122,7 @@
               <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
                   <mat-form-field class="example-full-width mb-3" appearance="outline">
-                    <mat-label>Address</mat-label>
+                    <mat-label>Dirección</mat-label>
                     <textarea matInput formControlName="address"></textarea>
                   </mat-form-field>
                 </div>
@@ -139,12 +139,12 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
                   <mat-form-field class="example-full-width mb-3" appearance="outline">
-                    <mat-label>Date Of Birth</mat-label>
+                    <mat-label>Fecha de Nacimiento</mat-label>
                     <input matInput [matDatepicker]="picker" formControlName="dob" required>
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                     <mat-error *ngIf="docForm.get('dob').hasError('required')">
-                      Please select date
+                      Por favor seleccione la fecha
                     </mat-error>
                   </mat-form-field>
                 </div>
@@ -160,7 +160,7 @@
               <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
                   <mat-form-field class="example-full-width mb-3" appearance="outline">
-                    <mat-label>Upload Image</mat-label>
+                    <mat-label>Subir una imágen</mat-label>
                     <ngx-mat-file-input formControlName="uploadImg">
                     </ngx-mat-file-input>
                     <mat-icon matSuffix>face</mat-icon>
@@ -170,8 +170,8 @@
               <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
                   <button class="btn-space" [disabled]="!docForm.valid " mat-raised-button
-                    color="primary">Submit</button>
-                  <button type="button" mat-button>Cancel</button>
+                    color="primary">Guardar</button>
+                  <button type="button" mat-button>Cancelar</button>
                 </div>
               </div>
             </form>

@@ -5,16 +5,16 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <ul class="breadcrumb breadcrumb-style ">
             <li class="breadcrumb-item">
-              <h4 class="page-title">View Doctors</h4>
+              <h4 class="page-title">Vista de Doctores</h4>
             </li>
             <li class="breadcrumb-item bcrumb-1">
               <a routerLink="/admin/dashboard/main">
-                <i class="fas fa-home"></i> Home</a>
+                <i class="fas fa-home"></i> Inicio</a>
             </li>
             <li class="breadcrumb-item bcrumb-2">
-              <a href="#" onClick="return false;">Doctors</a>
+              <a href="#" onClick="return false;">Doctores</a>
             </li>
-            <li class="breadcrumb-item active">View</li>
+            <li class="breadcrumb-item active">Vista</li>
           </ul>
         </div>
       </div>
@@ -30,11 +30,12 @@
                     <ul class="header-buttons-left ms-0">
                       <li class="dropdown">
                         <h2>
-                          <strong>Doctors</strong></h2>
+                          <strong>Doctores</strong>
+                        </h2>
                       </li>
                       <li class="dropdown m-l-20">
                         <label for="search-input"><i class="material-icons search-icon">search</i></label>
-                        <input placeholder="Search" type="text" #filter class="browser-default search-field"
+                        <input placeholder="Buscar" type="text" #filter class="browser-default search-field"
                           aria-label="Search box">
                       </li>
                       <li>
@@ -87,22 +88,22 @@
                   <mat-cell *matCellDef="let row">{{row.id}}</mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="img">
-                  <mat-header-cell mat-header-cell *matHeaderCellDef [ngClass]="'tbl-col-width-per-5'"> Image
+                  <mat-header-cell mat-header-cell *matHeaderCellDef [ngClass]="'tbl-col-width-per-5'"> Imágen
                   </mat-header-cell>
                   <mat-cell mat-cell *matCellDef="let row" class="table-img tbl-col-width-per-5"> <img
                       [src]="row.img" />
                   </mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="name">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</mat-header-cell>
                   <mat-cell *matCellDef="let row"> {{row.name}}</mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="department">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header>Department</mat-header-cell>
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Departamento</mat-header-cell>
                   <mat-cell *matCellDef="let row"> {{row.department}}</mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="specialization">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header>Specialization</mat-header-cell>
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Especialización</mat-header-cell>
                   <mat-cell *matCellDef="let row"> {{row.specialization}}</mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="degree">
@@ -110,7 +111,7 @@
                   <mat-cell *matCellDef="let row"> {{row.degree}}</mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="mobile">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header>Mobile</mat-header-cell>
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Teléfono Móbil</mat-header-cell>
                   <mat-cell *matCellDef="let row"> {{row.mobile}}</mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="email">
@@ -123,15 +124,15 @@
                 </ng-container>
                 <!-- actions -->
                 <ng-container matColumnDef="actions">
-                  <mat-header-cell class="pr-0" *matHeaderCellDef>Actions</mat-header-cell>
+                  <mat-header-cell class="pr-0" *matHeaderCellDef>Acciones</mat-header-cell>
                   <mat-cell *matCellDef="let row; let i=index;" class="pr-0">
                     <button mat-icon-button color="accent" class="btn-tbl-edit" (click)="$event.stopPropagation()"
                       (click)="editCall(row)">
-                      <mat-icon aria-label="Edit" class="col-white">edit</mat-icon>
+                      <mat-icon aria-label="Edit" class="col-white">editar</mat-icon>
                     </button>
                     <button mat-icon-button color="accent" class="btn-tbl-delete" (click)="$event.stopPropagation()"
                       (click)="deleteItem(i, row)">
-                      <mat-icon aria-label="Delete" class="col-white">delete</mat-icon>
+                      <mat-icon aria-label="Delete" class="col-white">eliminar</mat-icon>
                     </button>
                   </mat-cell>
                 </ng-container>
@@ -148,7 +149,7 @@
               </div>
               <div *ngIf="!exampleDatabase.isTblLoading" class="no-results"
                 [style.display]="dataSource.renderedData.length == 0 ? '' : 'none'">
-                No results
+                No hay resultados
               </div>
               <mat-paginator #paginator [length]="dataSource.filteredData.length" [pageIndex]="0" [pageSize]="10"
                 [pageSizeOptions]="[5, 10, 25, 100]">
