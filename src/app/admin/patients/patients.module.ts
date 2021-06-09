@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { MatStepperModule } from "@angular/material/stepper";
 import { MatTableModule } from "@angular/material/table";
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { MatFormFieldModule } from "@angular/material/form-field";
@@ -59,6 +60,7 @@ import { PatientService } from "./allpatients/patient.service";
     MatCheckboxModule,
     MaterialFileInputModule,
     MatProgressSpinnerModule,
+    MatStepperModule,
   ],
   providers: [PatientService],
 })
