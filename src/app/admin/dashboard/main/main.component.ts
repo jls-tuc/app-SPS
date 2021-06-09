@@ -51,7 +51,7 @@ export class MainComponent implements OnInit {
 
   public areaChartOptions: Partial<ChartOptions>;
   public barChartOptions: Partial<ChartOptions>;
-  constructor() {}
+  constructor() { }
   ngOnInit() {
     this.smallChart1();
     this.smallChart2();
@@ -101,7 +101,7 @@ export class MainComponent implements OnInit {
     };
     this.cardChart1Data = [
       {
-        label: "New Patients",
+        label: "Pacientes Nuevos",
         data: [50, 61, 80, 50, 72, 52, 60, 41, 30, 45, 70, 40, 93, 63, 50, 62],
         borderWidth: 4,
         pointStyle: "circle",
@@ -171,7 +171,7 @@ export class MainComponent implements OnInit {
     };
     this.cardChart2Data = [
       {
-        label: "New Patients",
+        label: "Pacientes Nuevos",
         data: [50, 61, 80, 50, 40, 93, 63, 50, 62, 72, 52, 60, 41, 30, 45, 70],
         borderWidth: 4,
         pointStyle: "circle",
@@ -241,7 +241,7 @@ export class MainComponent implements OnInit {
     };
     this.cardChart3Data = [
       {
-        label: "New Patients",
+        label: "Pacientes Nuevos",
         data: [52, 60, 41, 30, 45, 70, 50, 61, 80, 50, 72, 40, 93, 63, 50, 62],
         borderWidth: 4,
         pointStyle: "circle",
@@ -311,7 +311,7 @@ export class MainComponent implements OnInit {
     };
     this.cardChart4Data = [
       {
-        label: "New Patients",
+        label: "Pacientes Nuevos",
         data: [30, 45, 70, 40, 93, 63, 50, 62, 50, 61, 80, 50, 72, 52, 60, 41],
         borderWidth: 4,
         pointStyle: "circle",
@@ -345,11 +345,11 @@ export class MainComponent implements OnInit {
     this.areaChartOptions = {
       series: [
         {
-          name: "New Patients",
+          name: "Pacientes Nuevos",
           data: [31, 40, 28, 51, 42, 85, 77],
         },
         {
-          name: "Old Patients",
+          name: "Pacientes Viejos",
           data: [11, 32, 45, 32, 34, 52, 41],
         },
       ],
@@ -403,11 +403,11 @@ export class MainComponent implements OnInit {
     this.barChartOptions = {
       series: [
         {
-          name: "Colds and Flu",
+          name: "Resfriados y gripe",
           data: [44, 55, 41, 67, 22, 43],
         },
         {
-          name: "Headaches",
+          name: "Dolores de Cabeza",
           data: [13, 23, 20, 8, 13, 27],
         },
         {
@@ -415,7 +415,7 @@ export class MainComponent implements OnInit {
           data: [11, 17, 15, 15, 21, 14],
         },
         {
-          name: "Typhoid",
+          name: "Covid",
           data: [21, 7, 25, 13, 22, 8],
         },
       ],
@@ -451,7 +451,7 @@ export class MainComponent implements OnInit {
       },
       xaxis: {
         type: "category",
-        categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+        categories: ["Lun", "Mar", "Mier", "Jue", "Vie", "Sab"],
       },
       legend: {
         show: false,

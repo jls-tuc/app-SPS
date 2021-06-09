@@ -30,11 +30,12 @@
                     <ul class="header-buttons-left ms-0">
                       <li class="dropdown">
                         <h2>
-                          <strong>Payment</strong></h2>
+                          <strong>Payment</strong>
+                        </h2>
                       </li>
                       <li class="dropdown m-l-20">
                         <label for="search-input"><i class="material-icons search-icon">search</i></label>
-                        <input placeholder="Search" type="text" #filter class="browser-default search-field"
+                        <input placeholder="Buscar" type="text" #filter class="browser-default search-field"
                           aria-label="Search box">
                       </li>
                       <li>
@@ -91,7 +92,7 @@
                   <mat-cell *matCellDef="let row"> {{row.pName}}</mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="dName">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header>Doctor Name</mat-header-cell>
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Nombre del Doctor</mat-header-cell>
                   <mat-cell *matCellDef="let row"> {{row.dName}}</mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="charges">
@@ -116,7 +117,7 @@
                 </ng-container>
                 <!-- actions -->
                 <ng-container matColumnDef="actions">
-                  <mat-header-cell *matHeaderCellDef class="pr-0">Actions</mat-header-cell>
+                  <mat-header-cell *matHeaderCellDef class="pr-0">Acciones</mat-header-cell>
                   <mat-cell *matCellDef="let row; let i=index;" class="pr-0">
                     <button mat-icon-button color="accent" class="btn-tbl-edit" (click)="$event.stopPropagation()"
                       (click)="editCall(row)">

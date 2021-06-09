@@ -33,11 +33,12 @@
                           <ul class="header-buttons-left ms-0">
                             <li class="dropdown">
                               <h2>
-                                <strong>Contacts</strong></h2>
+                                <strong>Contacts</strong>
+                              </h2>
                             </li>
                             <li class="dropdown m-l-20">
                               <label for="search-input"><i class="material-icons search-icon">search</i></label>
-                              <input placeholder="Search" type="text" #filter class="browser-default search-field"
+                              <input placeholder="Buscar" type="text" #filter class="browser-default search-field"
                                 aria-label="Search box">
                             </li>
                             <li>
@@ -94,20 +95,20 @@
                         <mat-cell *matCellDef="let row">{{row.id}}</mat-cell>
                       </ng-container>
                       <ng-container matColumnDef="img">
-                        <mat-header-cell mat-header-cell *matHeaderCellDef [ngClass]="'tbl-col-width-per-6'"> Image
+                        <mat-header-cell mat-header-cell *matHeaderCellDef [ngClass]="'tbl-col-width-per-6'"> Imágen
                         </mat-header-cell>
                         <mat-cell mat-cell *matCellDef="let row" class="table-img tbl-col-width-per-6"> <img
                             [src]="row.img" />
                         </mat-cell>
                       </ng-container>
                       <ng-container matColumnDef="name">
-                        <mat-header-cell *matHeaderCellDef mat-sort-header>Name
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Nombre
                         </mat-header-cell>
                         <mat-cell *matCellDef="let row"> {{row.name}}
                         </mat-cell>
                       </ng-container>
                       <ng-container matColumnDef="mobile">
-                        <mat-header-cell *matHeaderCellDef mat-sort-header>Mobile
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Teléfono Móbil
                         </mat-header-cell>
                         <mat-cell *matCellDef="let row"> {{row.mobile}}
                         </mat-cell>
@@ -125,20 +126,20 @@
                           {{row.birthDate | date: 'MM/dd/yyyy'}}</mat-cell>
                       </ng-container>
                       <ng-container matColumnDef="address">
-                        <mat-header-cell *matHeaderCellDef mat-sort-header>Address
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Dirección
                         </mat-header-cell>
                         <mat-cell *matCellDef="let row" class="column-nowrap"> {{row.address}}
                         </mat-cell>
                       </ng-container>
                       <ng-container matColumnDef="note">
-                        <mat-header-cell *matHeaderCellDef mat-sort-header>Note
+                        <mat-header-cell *matHeaderCellDef mat-sort-header>Nota
                         </mat-header-cell>
                         <mat-cell *matCellDef="let row"> {{row.note}}
                         </mat-cell>
                       </ng-container>
                       <!-- actions -->
                       <ng-container matColumnDef="actions">
-                        <mat-header-cell class="pl-3 tbl-col-width-per-10" *matHeaderCellDef>Actions
+                        <mat-header-cell class="pl-3 tbl-col-width-per-10" *matHeaderCellDef>Acciones
                         </mat-header-cell>
                         <mat-cell *matCellDef="let row; let i=index;" class="pl-3 tbl-col-width-per-10">
                           <button mat-icon-button [matMenuTriggerFor]="menu" (click)="$event.stopPropagation()">

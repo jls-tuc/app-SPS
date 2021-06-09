@@ -27,11 +27,11 @@
         </div>
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
           <mat-form-field class="example-full-width" appearance="outline">
-            <mat-label>Doctor Name</mat-label>
+            <mat-label>Nombre del Doctor</mat-label>
             <input matInput formControlName="dName" required>
             <mat-icon matSuffix>perm_identity</mat-icon>
             <mat-error *ngIf="paymentForm.get('dName').hasError('required')">
-              Doctor Name is required
+              Nombre del Doctor is required
             </mat-error>
           </mat-form-field>
         </div>
@@ -44,7 +44,7 @@
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
             <mat-error *ngIf="paymentForm.get('date').hasError('required')">
-              Please select date
+              Por favor seleccione la fecha
             </mat-error>
           </mat-form-field>
         </div>
@@ -95,7 +95,7 @@
           <div class="example-button-row">
             <button mat-raised-button color="primary" [type]="submit" [disabled]="!paymentForm.valid"
               [mat-dialog-close]="1" (click)="confirmAdd()">Save</button>
-            <button mat-raised-button color="warn" (click)="onNoClick()" tabindex="-1">Cancel</button>
+            <button mat-raised-button color="warn" (click)="onNoClick()" tabindex="-1">Cancelar</button>
           </div>
         </div>
       </div>

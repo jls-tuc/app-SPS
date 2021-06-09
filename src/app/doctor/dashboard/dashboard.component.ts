@@ -57,7 +57,7 @@ export class DashboardComponent implements OnInit {
   public areaChartOptions: Partial<areaChartOptions>;
   public radialChartOptions: Partial<radialChartOptions>;
   public linechartOptions: Partial<linechartOptions>;
-  constructor() {}
+  constructor() { }
 
   // TODO start
   tasks = [
@@ -141,11 +141,11 @@ export class DashboardComponent implements OnInit {
     this.areaChartOptions = {
       series: [
         {
-          name: "New Patients",
+          name: "Pacientes Nuevos",
           data: [31, 40, 28, 51, 42, 85, 77],
         },
         {
-          name: "Old Patients",
+          name: "Pacientes Viejos",
           data: [11, 32, 45, 32, 34, 52, 41],
         },
       ],
@@ -230,11 +230,11 @@ export class DashboardComponent implements OnInit {
     this.linechartOptions = {
       series: [
         {
-          name: "Male",
+          name: "Masculino",
           data: [44, 55, 57, 56, 61, 58],
         },
         {
-          name: "Female",
+          name: "Femenino",
           data: [76, 85, 101, 98, 87, 105],
         },
       ],

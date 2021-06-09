@@ -11,7 +11,7 @@ export class EditPatientComponent {
   formdata = {
     first: "Pooja",
     last: "Sarma",
-    gender: "Female",
+    gender: "Femenino",
     mobile: "123456789",
     age: "23",
     email: "test@example.com",
@@ -19,7 +19,7 @@ export class EditPatientComponent {
     bGroup: "O+",
     bPresure: "123",
     sugger: "150",
-    injury: "Fever",
+    injury: "Fiebre",
     address: "101, Elanxa, New Yourk",
     dob: "1987-02-17T14:22:18Z",
   };

@@ -10,15 +10,15 @@ export class EditappointmentComponent {
   formdata = {
     first: "Pooja",
     last: "Sarma",
-    gender: "female",
+    gender: "femenino",
     mobile: "123456789",
     address: "101, Elanxa, New Yourk",
     email: "test@example.com",
     dob: "1987-02-17T14:22:18Z",
-    doctor: "Dr.Rajesh",
+    doctor: "Dra. Natalia Martinez",
     doa: "2018-05-25T14:22:18Z",
     toa: "10:25",
-    injury: "Fever",
+    injury: "Fiebre",
     note: "No Comments",
   };
   constructor(private fb: FormBuilder) {

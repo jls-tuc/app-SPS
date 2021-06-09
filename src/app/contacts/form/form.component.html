@@ -19,7 +19,7 @@
         <div class="row">
           <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
             <mat-form-field class="example-full-width mb-3" appearance="outline">
-              <mat-label>Name</mat-label>
+              <mat-label>Nombre</mat-label>
               <input matInput formControlName="name" required>
               <i class="material-icons-two-tone color-icon" matSuffix>face</i>
               <mat-error *ngIf="contactsForm.get('name').hasError('required')">
@@ -41,11 +41,11 @@
         <div class="row">
           <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-2">
             <mat-form-field class="example-full-width mb-3" appearance="outline">
-              <mat-label>Mobile</mat-label>
+              <mat-label>Teléfono Móbil</mat-label>
               <input matInput formControlName="mobile" type="number">
               <i class="material-icons-two-tone color-icon" matSuffix>smartphone</i>
               <mat-error *ngIf="contactsForm.get('mobile').hasError('required')">
-                Mobile is required
+                Teléfono Móbil is required
               </mat-error>
             </mat-form-field>
           </div>
@@ -56,7 +56,7 @@
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
               <mat-error *ngIf="contactsForm.get('birthDate').hasError('required')">
-                Please select date
+                Por favor seleccione la fecha
               </mat-error>
             </mat-form-field>
           </div>
@@ -64,7 +64,7 @@
         <div class="row">
           <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
             <mat-form-field class="example-full-width mb-3" appearance="outline">
-              <mat-label>Address</mat-label>
+              <mat-label>Dirección</mat-label>
               <textarea matInput formControlName="address"></textarea>
             </mat-form-field>
           </div>
@@ -72,7 +72,7 @@
         <div class="row">
           <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
             <mat-form-field class="example-full-width mb-3" appearance="outline">
-              <mat-label>Note</mat-label>
+              <mat-label>Nota</mat-label>
               <textarea matInput formControlName="note"></textarea>
             </mat-form-field>
           </div>
@@ -82,7 +82,7 @@
             <div class="example-button-row">
               <button mat-raised-button color="primary" [type]="submit" [disabled]="!contactsForm.valid"
                 [mat-dialog-close]="1" (click)="confirmAdd()">Save</button>
-              <button mat-raised-button color="warn" (click)="onNoClick()" tabindex="-1">Cancel</button>
+              <button mat-raised-button color="warn" (click)="onNoClick()" tabindex="-1">Cancelar</button>
             </div>
           </div>
         </div>

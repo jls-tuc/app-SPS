@@ -38,7 +38,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     private authService: AuthService,
     private router: Router,
     public languageService: LanguageService
-  ) {}
+  ) { }
   listLang = [
     { text: "English", flag: "assets/images/flags/us.jpg", lang: "en" },
     { text: "Spanish", flag: "assets/images/flags/spain.jpg", lang: "es" },
@@ -47,43 +47,43 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   notifications: any[] = [
     {
       userImg: "assets/images/user/user1.jpg",
-      userName: "Sarah Smith",
+      userName: "Carolina Fernández",
       time: "14 mins ago",
       message: "Please check your mail",
     },
     {
       userImg: "assets/images/user/user2.jpg",
-      userName: "Airi Satou",
+      userName: "Damián Sosa",
       time: "22 mins ago",
       message: "Work Completed !!!",
     },
     {
       userImg: "assets/images/user/user3.jpg",
-      userName: "John Doe",
+      userName: "Mario Martínez",
       time: "3 hours ago",
       message: "kindly help me for code.",
     },
     {
       userImg: "assets/images/user/user4.jpg",
-      userName: "Ashton Cox",
+      userName: "Pedro Candel",
       time: "5 hours ago",
       message: "Lets break for lunch...",
     },
     {
       userImg: "assets/images/user/user5.jpg",
-      userName: "Sarah Smith",
+      userName: "Carolina Fernández",
       time: "14 mins ago",
       message: "Please check your mail",
     },
     {
       userImg: "assets/images/user/user6.jpg",
-      userName: "Airi Satou",
+      userName: "Damián Sosa",
       time: "22 mins ago",
       message: "Work Completed !!!",
     },
     {
       userImg: "assets/images/user/user7.jpg",
-      userName: "John Doe",
+      userName: "Mario Martínez",
       time: "3 hours ago",
       message: "kindly help me for code.",
     },

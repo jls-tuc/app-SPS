@@ -53,13 +53,13 @@
               <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
                   <mat-form-field class="example-full-width mb-3">
-                    <mat-label>Doctor Name</mat-label>
+                    <mat-label>Nombre del Doctor</mat-label>
                     <mat-select formControlName="dName" required>
                       <mat-option [value]="'1'">
                         DR. John Deo
                       </mat-option>
                       <mat-option [value]="'2'">
-                        Dr.Rajesh
+                        Dra. Natalia Martinez
                       </mat-option>
                       <mat-option [value]="'3'">
                         DR. Megha Trivedi
@@ -82,7 +82,7 @@
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                     <mat-error *ngIf="paymentForm.get('pDate').hasError('required')">
-                      Please select date
+                      Por favor seleccione la fecha
                     </mat-error>
                   </mat-form-field>
                 </div>
@@ -136,7 +136,7 @@
               <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
                   <mat-form-field class="example-full-width mb-3">
-                    <mat-label>Payment Status</mat-label>
+                    <mat-label>Estado de Pago</mat-label>
                     <mat-select formControlName="pStatus" required>
                       <mat-option [value]="'1'">
                         Complete
@@ -156,8 +156,8 @@
               </div>
               <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
-                  <button class="btn-space" mat-raised-button color="primary">Submit</button>
-                  <button type="button" mat-button>Cancel</button>
+                  <button class="btn-space" mat-raised-button color="primary">Guardar</button>
+                  <button type="button" mat-button>Cancelar</button>
                 </div>
               </div>
             </form>

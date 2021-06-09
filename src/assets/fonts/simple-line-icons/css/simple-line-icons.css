@@ -11,7 +11,7 @@
 */
 .icon-user,
 .icon-people,
-.icon-user-female,
+.icon-user-femenino,
 .icon-user-follow,
 .icon-user-following,
 .icon-user-unfollow,
@@ -169,8 +169,8 @@
 .icon-reload,
 .icon-settings,
 .icon-star,
-.icon-symble-female,
-.icon-symbol-male,
+.icon-symble-femenino,
+.icon-symbol-masculino,
 .icon-target,
 .icon-credit-card,
 .icon-paypal,
@@ -209,7 +209,7 @@
 .icon-people:before {
   content: "\e001";
 }
-.icon-user-female:before {
+.icon-user-femenino:before {
   content: "\e000";
 }
 .icon-user-follow:before {
@@ -683,10 +683,10 @@
 .icon-star:before {
   content: "\e09b";
 }
-.icon-symble-female:before {
+.icon-symble-femenino:before {
   content: "\e09c";
 }
-.icon-symbol-male:before {
+.icon-symbol-masculino:before {
   content: "\e09d";
 }
 .icon-target:before {

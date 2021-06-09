@@ -30,11 +30,12 @@
                     <ul class="header-buttons-left ms-0">
                       <li class="dropdown">
                         <h2>
-                          <strong>Patients</strong></h2>
+                          <strong>Patients</strong>
+                        </h2>
                       </li>
                       <li class="dropdown m-l-20">
                         <label for="search-input"><i class="material-icons search-icon">search</i></label>
-                        <input placeholder="Search" type="text" #filter class="browser-default search-field"
+                        <input placeholder="Buscar" type="text" #filter class="browser-default search-field"
                           aria-label="Search box">
                       </li>
                       <li>
@@ -87,30 +88,30 @@
                   <mat-cell *matCellDef="let row">{{row.id}}</mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="img">
-                  <mat-header-cell mat-header-cell *matHeaderCellDef [ngClass]="'tbl-col-width-per-5'"> Image
+                  <mat-header-cell mat-header-cell *matHeaderCellDef [ngClass]="'tbl-col-width-per-5'"> Imágen
                   </mat-header-cell>
                   <mat-cell mat-cell *matCellDef="let row" class="table-img tbl-col-width-per-5"> <img
                       [src]="row.img" />
                   </mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="name">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</mat-header-cell>
                   <mat-cell *matCellDef="let row"> {{row.name}}</mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="gender">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="'tbl-col-width-per-8'">Gender
+                  <mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="'tbl-col-width-per-8'">Género
                   </mat-header-cell>
                   <mat-cell *matCellDef="let row" [ngClass]="'tbl-col-width-per-8'"> {{row.gender}}
                   </mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="address">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="'tbl-col-width-per-15'">Address
+                  <mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="'tbl-col-width-per-15'">Dirección
                   </mat-header-cell>
                   <mat-cell *matCellDef="let row" [ngClass]="'tbl-col-width-per-20'"> {{row.address}}
                   </mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="mobile">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header>Mobile</mat-header-cell>
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Teléfono Móbil</mat-header-cell>
                   <mat-cell *matCellDef="let row"> {{row.mobile}}</mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="date">
@@ -127,7 +128,7 @@
                 </ng-container>
                 <!-- actions -->
                 <ng-container matColumnDef="actions">
-                  <mat-header-cell *matHeaderCellDef class="pr-0">Actions</mat-header-cell>
+                  <mat-header-cell *matHeaderCellDef class="pr-0">Acciones</mat-header-cell>
                   <mat-cell *matCellDef="let row; let i=index;" class="pr-0">
                     <button mat-icon-button color="accent" class="btn-tbl-edit" (click)="$event.stopPropagation()"
                       (click)="editCall(row)">

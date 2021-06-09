@@ -16,7 +16,7 @@ export class PastAppointment {
       this.img = appointment.avatar || "assets/images/user/user1.jpg";
       this.name = appointment.name || "";
       this.email = appointment.email || "";
-      this.gender = appointment.gender || "male";
+      this.gender = appointment.gender || "masculino";
       this.date = formatDate(new Date(), "yyyy-MM-dd", "en") || "";
       this.time = appointment.time || "";
       this.mobile = appointment.mobile || "";
