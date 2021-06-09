@@ -181,13 +181,13 @@ export class TaskComponent implements OnInit {
   addNewTask(nav: any) {
     this.resetFormField();
     this.isNewEvent = true;
-    this.dialogTitle = "New Task";
+    this.dialogTitle = "Nueva Tarea";
     this.userImg = "assets/images/user/user1.jpg";
     nav.open();
   }
   taskClick(task, nav: any): void {
     this.isNewEvent = false;
-    this.dialogTitle = "Edit Task";
+    this.dialogTitle = "Editar";
     this.userImg = task.img;
     nav.open();
     this.taskForm = this.createFormGroup(task);
