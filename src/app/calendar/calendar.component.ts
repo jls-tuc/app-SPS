@@ -29,22 +29,22 @@ export class CalendarComponent implements OnInit {
   filterOptions = "All";
   calendarData: any;
   filterItems: string[] = [
-    "work",
+    "trabajo",
     "personal",
-    "important",
-    "travel",
-    "friends",
+    "importante",
+    "viaje",
+    "amigos",
   ];
 
   calendarEvents: EventInput[];
   tempEvents: EventInput[];
 
   public filters = [
-    { name: "work", value: "Work", checked: true },
+    { name: "trabajo", value: "Trabajo", checked: true },
     { name: "personal", value: "Personal", checked: true },
-    { name: "important", value: "Important", checked: true },
-    { name: "travel", value: "Travel", checked: true },
-    { name: "friends", value: "Friends", checked: true },
+    { name: "importante", value: "Importante", checked: true },
+    { name: "viaje", value: "Viaje", checked: true },
+    { name: "amigos", value: "Amigos", checked: true },
   ];
 
   constructor(
@@ -53,7 +53,7 @@ export class CalendarComponent implements OnInit {
     public calendarService: CalendarService,
     private snackBar: MatSnackBar
   ) {
-    this.dialogTitle = "Add New Event";
+    this.dialogTitle = "Agregar Nuevo Evento";
     this.calendar = new Calendar({});
     this.addCusForm = this.createCalendarForm(this.calendar);
   }
@@ -118,9 +118,9 @@ export class CalendarComponent implements OnInit {
         this.addCusForm.reset();
         this.showNotification(
           "snackbar-success",
-          "Add Record Successfully...!!!",
-          "bottom",
-          "center"
+          "Registro Agregado Satisfactoriamente...!!!",
+          "debajo",
+          "centro"
         );
       }
     });
@@ -179,10 +179,10 @@ export class CalendarComponent implements OnInit {
           }
         }, this);
         this.showNotification(
-          "black",
-          "Edit Record Successfully...!!!",
-          "bottom",
-          "center"
+          "negro",
+          "Registro Editado Satisfactoriamente...!!!",
+          "debajo",
+          "centro"
         );
         this.addCusForm.reset();
       } else if (result === "delete") {
@@ -195,9 +195,9 @@ export class CalendarComponent implements OnInit {
 
         this.showNotification(
           "snackbar-danger",
-          "Delete Record Successfully...!!!",
-          "bottom",
-          "center"
+          "Registro Eliminado Satisfactoriamente...!!!",
+          "debajo",
+          "centro"
         );
       }
     });
@@ -252,11 +252,11 @@ export class CalendarComponent implements OnInit {
   getClassNameValue(category) {
     let className: string;
 
-    if (category === "work") className = "fc-event-success";
+    if (category === "trabajo") className = "fc-event-success";
     else if (category === "personal") className = "fc-event-warning";
-    else if (category === "important") className = "fc-event-primary";
-    else if (category === "travel") className = "fc-event-danger";
-    else if (category === "friends") className = "fc-event-info";
+    else if (category === "importante") className = "fc-event-primary";
+    else if (category === "viaje") className = "fc-event-danger";
+    else if (category === "amigos") className = "fc-event-info";
 
     return className;
   }

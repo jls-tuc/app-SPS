@@ -33,7 +33,7 @@ export class FormDialogComponent {
       this.calendar = data.calendar;
       this.showDeleteBtn = true;
     } else {
-      this.dialogTitle = "New Event";
+      this.dialogTitle = "Nuevo Evento";
       this.calendar = new Calendar({});
       this.showDeleteBtn = false;
     }
@@ -46,10 +46,10 @@ export class FormDialogComponent {
   ]);
   getErrorMessage() {
     return this.formControl.hasError("required")
-      ? "Required field"
+      ? "Campo Requerido"
       : this.formControl.hasError("email")
-      ? "Not a valid email"
-      : "";
+        ? "Email No Válido"
+        : "";
   }
   createContactForm(): FormGroup {
     return this.fb.group({
