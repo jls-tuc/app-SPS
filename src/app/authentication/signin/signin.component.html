@@ -7,31 +7,31 @@
     <div class="col-sm-6 auth-form-section">
       <div class="form-section">
         <div class="auth-wrapper">
-          <h2 class="welcome-msg"> Welcome to Cliniva </h2>
-          <p class="auth-signup-text text-muted">Need an account?<a routerLink="/authentication/signup"
-              class="sign-up-link">Sign Up
+          <h2 class="welcome-msg"> Bienvenido a SPSalud </h2>
+          <p class="auth-signup-text text-muted">Necesita una cuenta?<a routerLink="/authentication/signup"
+              class="sign-up-link">Registrarse
             </a></p>
           <div class="d-flex justify-content-between lbl-alert mb-3">
             <div>
-              <button mat-raised-button color="primary" type="button" (click)="adminSet();">Admin</button>
+              <button mat-raised-button color="primary" type="button" (click)="adminSet();">Administradores</button>
             </div>
             <div>
-              <button mat-raised-button color="accent" type="button" (click)="doctorSet();">Doctor</button>
+              <button mat-raised-button color="accent" type="button" (click)="doctorSet();">Doctores</button>
             </div>
             <div>
-              <button mat-raised-button color="warn" type="button" (click)="patientSet();">Patient</button>
+              <button mat-raised-button color="warn" type="button" (click)="patientSet();">Pacientes</button>
             </div>
           </div>
-          <h2 class="login-title">Sign in</h2>
+          <h2 class="login-title">Ingresar</h2>
           <form class="validate-form" [formGroup]="authForm" (ngSubmit)="onSubmit()">
             <div class="row">
               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
                 <mat-form-field class="example-full-width" appearance="outline">
-                  <mat-label>Username</mat-label>
+                  <mat-label>Usuario</mat-label>
                   <input matInput formControlName="username" />
                   <mat-icon matSuffix>face</mat-icon>
                   <mat-error *ngIf="authForm.get('username').hasError('required')">
-                    Username is required
+                    El Usuario es requerido
                   </mat-error>
                 </mat-form-field>
               </div>
@@ -39,14 +39,14 @@
             <div class="row">
               <div class="col-xl-12col-lg-12 col-md-12 col-sm-12 mb-2">
                 <mat-form-field class="example-full-width" appearance="outline">
-                  <mat-label>Password</mat-label>
+                  <mat-label>Contraseña</mat-label>
                   <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
                   <a class="show-pwd-icon" href="#" onClick="return false;" matSuffix (click)="hide = !hide"
                     [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
                     <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                   </a>
                   <mat-error *ngIf="authForm.get('password').hasError('required')">
-                    Password is required
+                    La Contraseña es requerida
                   </mat-error>
                 </mat-form-field>
               </div>
@@ -54,13 +54,13 @@
             <div class="d-flex justify-content-between align-items-center mb-5">
               <div class="form-check">
                 <label class="form-check-label">
-                  <input class="form-check-input" type="checkbox" value=""> Remember me
+                  <input class="form-check-input" type="checkbox" value=""> Recordarme
                   <span class="form-check-sign">
                     <span class="check"></span>
                   </span>
                 </label>
               </div>
-              <a class="txt1" routerLink="/authentication/forgot-password">Forgot Password?</a>
+              <a class="txt1" routerLink="/authentication/forgot-password">Olvido su Contraseña?</a>
             </div>
             <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
             <div class="container-auth-form-btn">
@@ -69,7 +69,7 @@
               </mat-spinner-button>
             </div>
           </form>
-          <h6 class="social-login-title">OR</h6>
+          <h6 class="social-login-title">O puede Ingresar con</h6>
           <ul class="list-unstyled social-icon mb-0 mt-3">
             <li class="list-inline-item"><a href="javascript:void(0)" class="rounded">
                 <i class="fab fa-google"></i>

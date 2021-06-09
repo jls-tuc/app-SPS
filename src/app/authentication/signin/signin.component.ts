@@ -23,7 +23,7 @@ export class SigninComponent implements OnInit {
 
   spinnerButtonOptions: MatProgressButtonOptions = {
     active: false,
-    text: "Login",
+    text: "Ingresar",
     spinnerSize: 18,
     raised: true,
     stroked: false,
