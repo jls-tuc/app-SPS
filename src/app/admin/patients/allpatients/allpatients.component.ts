@@ -13,6 +13,8 @@ import { BehaviorSubject, fromEvent, merge, Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { SelectionModel } from "@angular/cdk/collections";
 
+import { Router } from "@angular/router";
+
 @Component({
   selector: "app-allpatients",
   templateUrl: "./allpatients.component.html",
@@ -39,6 +41,7 @@ export class AllpatientsComponent implements OnInit {
   patient: Patient | null;
   constructor(
     public httpClient: HttpClient,
+    private router: Router,
     public dialog: MatDialog,
     public patientService: PatientService,
     private snackBar: MatSnackBar
@@ -53,7 +56,9 @@ export class AllpatientsComponent implements OnInit {
     this.loadData();
   }
   addNew() {
-    let tempDirection;
+    this.router.navigate(["/admin/patients/add-patient"]);
+
+    /*  let tempDirection;
     if (localStorage.getItem("isRtl") === "true") {
       tempDirection = "rtl";
     } else {
@@ -81,7 +86,7 @@ export class AllpatientsComponent implements OnInit {
           "center"
         );
       }
-    });
+    }); */
   }
   editCall(row) {
     this.id = row.id;

@@ -15,7 +15,7 @@ const httpOptions = {
   providedIn: "root",
 })
 export class ValidarPersonaService {
-  public _getPersona: getPersona;
+  public getPersona: getPersona;
 
   constructor(public http: HttpClient) {}
 
@@ -24,7 +24,7 @@ export class ValidarPersonaService {
   }
 
   getPersonaRenaper(data: any) {
-    let url = API_USERS_URL;
+    const url = API_USERS_URL;
     console.log("persona", data);
     return this.http.get(url + `/?${data}`);
   }
