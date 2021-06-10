@@ -1,4 +1,4 @@
 export interface getPersona {
-  documento: string;
+  dni: string;
   sexo: string;
 }

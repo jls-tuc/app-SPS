@@ -9,6 +9,7 @@ import Swal from "sweetalert2";
 import * as moment from "moment";
 import { debounceTime } from "rxjs/operators";
 import { Localidades } from "src/app/core/models/localidades.interface";
+import { ProvLocService } from "src/app/core/service/prov-loc.service";
 
 @Component({
   selector: "app-add-patient",
@@ -21,9 +22,10 @@ export class AddPatientComponent {
   pacienteForm: FormGroup;
   datosRenaper: {};
   verStep2 = false;
-  verStep3 = false;
+  ocultarBusqueda = false;
   verStep4 = false;
-  edad;
+
+  edad: string;
   mostrarEdad;
   sexo: string[] = ["F", "M"];
   genero: string[] = ["femenino", "masculino", "otro"];
@@ -37,18 +39,22 @@ export class AddPatientComponent {
   ];
   public cargar_datos: boolean = false;
   public buscar_datos: boolean = true;
-  public localidades: Localidades[] = [];
+  public provLoc: any[] = [];
+  localidades: any[] = [];
+  public provincia: any[] = [];
 
   constructor(
     private fb: FormBuilder,
     private cdr: ChangeDetectorRef,
-    private ValidarPersona: ValidarPersonaService
+    private ValidarPersona: ValidarPersonaService,
+    private provLocService: ProvLocService
   ) {
     this.buildForm();
   }
-  OnInit() {
+  ngOnInit() {
+    this.obtProvLoc();
+
     this.cdr.markForCheck();
-    console.log("Form Value", this.pacienteForm.value);
   }
 
   buildForm(data?) {
@@ -66,20 +72,20 @@ export class AddPatientComponent {
         genero: [data ? data.genero : ""],
         nroTramite: [data ? data.ID_TRAMITE_PRINCIPAL : ""],
         cuil: [data ? data.cuil : ""],
-        fechaFallecimiento: [data ? data.fechafallecimiento : "Sin informar"],
+        fechaFallecimiento: [data ? data.mensaf : "Sin informar"],
         estadoCivil: [data ? data.estadoCivil : ""],
-        foto: [data ? data.img : ""],
+        foto: [data ? data.foto : ""],
         nacionalidad: [data ? data.nacionalidad : ""],
       }),
       direccion: this.fb.group({
-        provincia: [""],
-        localidad: [""],
-        codigoPostal: [""],
-        calle: [""],
-        numero: [""],
-        block: [""],
-        piso: [""],
-        dpto: [""],
+        provincia: [data ? data.provincia : ""],
+        localidad: [data ? data.ciudad : ""],
+        codigoPostal: [data ? data.cpostal : ""],
+        calle: [data ? data.calle : ""],
+        numero: [data ? data.numero : ""],
+        block: [data ? data : ""],
+        piso: [data ? data.piso : ""],
+        dpto: [data ? data.departamento : ""],
       }),
       datosContacto: this.fb.group({
         telefono: ["", Validators.required],
@@ -107,6 +113,7 @@ export class AddPatientComponent {
         ],
       }),
     });
+    this.cdr.markForCheck();
     this.pacienteForm.valueChanges
       .pipe(debounceTime(500))
       .subscribe((value) => {
@@ -114,35 +121,70 @@ export class AddPatientComponent {
       });
   }
 
+  obtProvLoc() {
+    this.provLocService.getProvLocalidades().subscribe((data: any) => {
+      this.provLoc = data.data;
+      this.provincia = [
+        ...new Set(this.provLoc.map((item) => item.provincia_nombre)),
+      ];
+    });
+  }
+
+  provSelect(e?: any) {
+    this.localidades = this.provLoc.filter(
+      (data) => data.provincia_nombre === e
+    );
+    this.ngOnInit();
+    this.cdr.detectChanges();
+  }
+
   calcularEdad() {
     if (this.edad) {
+      //console.log("edad", this.edad);
       const convertAge = new Date(this.edad);
       const timeDiff = Math.abs(Date.now() - convertAge.getTime());
       this.mostrarEdad = Math.floor(timeDiff / (1000 * 3600 * 24) / 365);
       this.pacienteForm.patchValue({
         datosPersonales: { edad: this.mostrarEdad },
       });
-      //console.log(this.personaForm);
+
+      this.cdr.markForCheck();
+      //console.log(this.pacienteForm);
     }
   }
 
   async validarDNI() {
     let doc = this.pacienteForm.get("datosPersonales.documento").value;
     let sexo = this.pacienteForm.get("datosPersonales.sexo").value;
-    let params = `documento=${
+    let params = `dni=${
       this.pacienteForm.get("datosPersonales.documento").value
     }&sexo=${this.pacienteForm.get("datosPersonales.sexo").value}`;
-    console.log("PacienteDNI", params);
-    (this.verStep2 = true),
-      this.ValidarPersona.getPersonaBD(params).subscribe(async (data: any) => {
+
+    this.ValidarPersona.getPersonaRenaper(params).subscribe(
+      async (data: any) => {
         console.log("data", data);
-        this.datosRenaper = data;
-        this.edad = this.pacienteForm.get(
-          "datosPersonales.fechaNacimiento"
-        ).value;
-        this.calcularEdad();
-        this.cdr.markForCheck();
-      });
+        if (data.ID_TRAMITE_PRINCIPAL !== 0) {
+          this.ocultarBusqueda = true;
+          this.datosRenaper = data;
+          data.documento = this.pacienteForm.get(
+            "datosPersonales.documento"
+          ).value;
+          data.sexo = this.pacienteForm.get("datosPersonales.sexo").value;
+          this.buildForm(data);
+          this.edad = data.fechaNacimiento;
+          this.calcularEdad();
+          this.cdr.markForCheck();
+        } else {
+          Swal.fire({
+            position: "top-end",
+            icon: "warning",
+            title: "Por favor, verifique los datos ingresados.",
+            showConfirmButton: false,
+            timer: 3500,
+          });
+        }
+      }
+    );
   }
 
   guardar() {}
