@@ -39,7 +39,7 @@ export class FormComponent {
       this.isDetails = true;
     } else {
       this.isDetails = false;
-      this.dialogTitle = "New Contacts";
+      this.dialogTitle = "Contactos Nuevos";
       this.contacts = new Contacts({});
       this.contactsForm = this.createContactForm();
     }
@@ -52,8 +52,8 @@ export class FormComponent {
     return this.formControl.hasError("required")
       ? "Required field"
       : this.formControl.hasError("email")
-      ? "Not a valid email"
-      : "";
+        ? "Not a valid email"
+        : "";
   }
   createContactForm(): FormGroup {
     return this.fb.group({
