@@ -10,6 +10,8 @@ import * as moment from "moment";
 import { debounceTime } from "rxjs/operators";
 import { Localidades } from "src/app/core/models/localidades.interface";
 import { ProvLocService } from "src/app/core/service/prov-loc.service";
+import { PacienteService } from "src/app/core/service/pacientes/paciente.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-add-patient",
@@ -46,8 +48,10 @@ export class AddPatientComponent {
   constructor(
     private fb: FormBuilder,
     private cdr: ChangeDetectorRef,
+    private router: Router,
     private ValidarPersona: ValidarPersonaService,
-    private provLocService: ProvLocService
+    private provLocService: ProvLocService,
+    private pacienteService: PacienteService
   ) {
     this.buildForm();
   }
@@ -65,17 +69,17 @@ export class AddPatientComponent {
       datosPersonales: this.fb.group({
         nombre: [data ? data.nombres : ""],
         apellido: [data ? data.apellido : ""],
-        documento: [data ? data.documento : "", Validators.required],
+        dni: [data ? data.dni : "", Validators.required],
         fechaNacimiento: [data ? data.fechaNacimiento : ""],
         edad: [""],
         sexo: [data ? data.sexo : "", Validators.required],
-        genero: [data ? data.genero : ""],
+        genero: [data ? data.genero : "", Validators.required],
         nroTramite: [data ? data.ID_TRAMITE_PRINCIPAL : ""],
         cuil: [data ? data.cuil : ""],
         fechaFallecimiento: [data ? data.mensaf : "Sin informar"],
-        estadoCivil: [data ? data.estadoCivil : ""],
+        estadoCivil: [data ? data.estadoCivil : "", Validators.required],
         foto: [data ? data.foto : ""],
-        nacionalidad: [data ? data.nacionalidad : ""],
+        origenf: [data ? data.origenf : ""],
       }),
       direccion: this.fb.group({
         provincia: [data ? data.provincia : ""],
@@ -83,12 +87,12 @@ export class AddPatientComponent {
         codigoPostal: [data ? data.cpostal : ""],
         calle: [data ? data.calle : ""],
         numero: [data ? data.numero : ""],
-        block: [data ? data : ""],
+        block: [data ? data.monoblock : ""],
         piso: [data ? data.piso : ""],
         dpto: [data ? data.departamento : ""],
       }),
       datosContacto: this.fb.group({
-        telefono: ["", Validators.required],
+        telefono: [""],
         celular: [""],
         email: [
           "",
@@ -102,7 +106,7 @@ export class AddPatientComponent {
         parentesco: [""],
         nombre: [""],
         apellido: [""],
-        telefono: ["", Validators.required],
+        telefono: [""],
         celular: [""],
         email: [
           "",
@@ -114,11 +118,11 @@ export class AddPatientComponent {
       }),
     });
     this.cdr.markForCheck();
-    this.pacienteForm.valueChanges
+    /*  this.pacienteForm.valueChanges
       .pipe(debounceTime(500))
       .subscribe((value) => {
         console.log(value);
-      });
+      }); */
   }
 
   obtProvLoc() {
@@ -154,10 +158,8 @@ export class AddPatientComponent {
   }
 
   async validarDNI() {
-    let doc = this.pacienteForm.get("datosPersonales.documento").value;
-    let sexo = this.pacienteForm.get("datosPersonales.sexo").value;
-    let params = `dni=${
-      this.pacienteForm.get("datosPersonales.documento").value
+    const params = `dni=${
+      this.pacienteForm.get("datosPersonales.dni").value
     }&sexo=${this.pacienteForm.get("datosPersonales.sexo").value}`;
 
     this.ValidarPersona.getPersonaRenaper(params).subscribe(
@@ -166,9 +168,7 @@ export class AddPatientComponent {
         if (data.ID_TRAMITE_PRINCIPAL !== 0) {
           this.ocultarBusqueda = true;
           this.datosRenaper = data;
-          data.documento = this.pacienteForm.get(
-            "datosPersonales.documento"
-          ).value;
+          data.dni = this.pacienteForm.get("datosPersonales.dni").value;
           data.sexo = this.pacienteForm.get("datosPersonales.sexo").value;
           this.buildForm(data);
           this.edad = data.fechaNacimiento;
@@ -187,14 +187,49 @@ export class AddPatientComponent {
     );
   }
 
-  guardar() {}
+  guardar() {
+    if (this.pacienteForm.invalid) {
+      return Object.values(this.pacienteForm.controls).forEach((control) => {
+        if (control instanceof FormGroup) {
+          Object.values(control.controls).forEach((ctrl) =>
+            ctrl.markAsTouched()
+          );
+        } else {
+          control.markAsTouched();
+        }
+      });
+    } else {
+      /* this.pacienteForm.patchValue({
+        direccion: `${
+          this.pacienteForm.get("datos_Seguimiento.numero").value
+        } ${this.pacienteForm.get("datos_Seguimiento.calle").value} ${
+          this.pacienteForm.get("datos_Seguimiento.localidad").value
+        } Neuquen`,
+      }); */ //TODO:Para cargar la Geo Location
+      const datos = this.pacienteForm.value;
+
+      this.pacienteService.crearForm(datos).subscribe(async (data: any) => {
+        if (data.ok === true) {
+          await Swal.fire(
+            "El paciente fue registrado correctamente",
+            "Puede continuar",
+            "success"
+          );
+          await this.pacienteForm.reset();
+          this.router.navigate(["/admin/patients/all-patients"]);
+        } else {
+          Swal.fire("Verificar la conexion", "", "error");
+        }
+      });
+    }
+  }
 
   // TODO:persona
 
-  get documentoNoValido() {
+  get dniNoValido() {
     return (
-      this.pacienteForm.get("datosPersonales.documento").invalid &&
-      this.pacienteForm.get("datosPersonales.documento").touched
+      this.pacienteForm.get("datosPersonales.dni").invalid &&
+      this.pacienteForm.get("datosPersonales.dni").touched
     );
   }
 

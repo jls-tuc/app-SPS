@@ -37,9 +37,9 @@
 
                       <mat-form-field class="DP-full-width">
                         <mat-label>Nro.Documento</mat-label>
-                        <input type="text" class="form-control" matInput formControlName="documento"
-                          [class.is-invalid]='documentoNoValido' placeholder="Ingrese el número de documento">
-                        <mat-error *ngIf='documentoNoValido' class="text-danger col-lg-6">
+                        <input type="text" class="form-control" matInput formControlName="dni"
+                          [class.is-invalid]='dniNoValido' placeholder="Ingrese el número de dni">
+                        <mat-error *ngIf='dniNoValido' class="text-danger col-lg-6">
                           <strong> Es necesario completar el campo.</strong>
                         </mat-error>
                       </mat-form-field>
@@ -54,7 +54,7 @@
                             </mat-radio-button>
                             <mat-error *ngIf='sexoNoValido' class="text-danger col-lg-6">
                               <strong>Seleccioná el sexo como
-                                figura en el documento</strong>
+                                figura en el dni</strong>
                             </mat-error>
                           </mat-radio-group>
                         </div>
@@ -81,8 +81,8 @@
                         <mat-form-field>
                           <mat-label>Nombre</mat-label>
                           <input type="text" class="form-control" matInput formControlName="nombre"
-                            [class.is-invalid]='documentoNoValido' placeholder="Nombre">
-                          <mat-error *ngIf='documentoNoValido' class="text-danger col-lg-6">
+                            [class.is-invalid]='dniNoValido' placeholder="Nombre">
+                          <mat-error *ngIf='dniNoValido' class="text-danger col-lg-6">
                             <strong> Es necesario completar el campo.</strong>
                           </mat-error>
                         </mat-form-field>
