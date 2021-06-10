@@ -25,6 +25,8 @@ import { MaterialFileInputModule } from "ngx-material-file-input";
 import { MatTabsModule } from "@angular/material/tabs";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { DoctorsService } from "./alldoctors/doctors.service";
+import { MatStepperModule } from "@angular/material/stepper";
+import { MatRadioModule } from "@angular/material/radio";
 
 @NgModule({
   declarations: [
@@ -56,6 +58,8 @@ import { DoctorsService } from "./alldoctors/doctors.service";
     MaterialFileInputModule,
     DoctorsRoutingModule,
     MatProgressSpinnerModule,
+    MatStepperModule,
+    MatRadioModule,
   ],
   providers: [DoctorsService],
 })

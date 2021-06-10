@@ -5,16 +5,16 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <ul class="breadcrumb breadcrumb-style ">
             <li class="breadcrumb-item">
-              <h4 class="page-title">Add Doctor</h4>
+              <h4 class="page-title">Nuevo Profesional</h4>
             </li>
             <li class="breadcrumb-item bcrumb-1">
               <a routerLink="/admin/dashboard/main">
-                <i class="fas fa-home"></i> Home</a>
+                <i class="fas fa-home"></i> Inicio</a>
             </li>
             <li class="breadcrumb-item bcrumb-2">
               <a href="#" onClick="return false;">Doctores</a>
             </li>
-            <li class="breadcrumb-item active">Add</li>
+            <li class="breadcrumb-item active">Agregar</li>
           </ul>
         </div>
       </div>
@@ -23,10 +23,406 @@
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
         <div class="card">
           <div class="header">
-            <h2>Add Doctor</h2>
-
+            <h2>Nuevo profesional.</h2>
           </div>
-          <div class="body">
+          <form class="m-4" autocomplete="off" [formGroup]="docForm" (ngSubmit)="guardar()">
+            <mat-vertical-stepper #linearVerticalStepper="matVerticalStepper" [linear]="false">
+              <mat-step [stepControl]="docForm" state="fa fa-pencil">
+                <ng-template matStepLabel>Validacion de los datos personales</ng-template>
+                <div class="mb-15" formGroupName="datosPersonales">
+
+                  <div class="row">
+
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
+
+                      <mat-form-field class="DP-full-width">
+                        <mat-label>Nro.Documento</mat-label>
+                        <input type="text" class="form-control" matInput formControlName="dni"
+                          [class.is-invalid]='dniNoValido' placeholder="Ingrese el número de dni">
+                        <mat-error *ngIf='dniNoValido' class="text-danger col-lg-6">
+                          <strong> Es necesario completar el campo.</strong>
+                        </mat-error>
+                      </mat-form-field>
+
+                      <div class="form-group">
+                        <label>Seleccione Sexo</label>
+                        <div class="radio-inline">
+                          <mat-radio-group aria-labelledby="example-radio-group-label" class="radio radio-lg"
+                            formControlName="sexo">
+                            <mat-radio-button *ngFor="let s of sexo" [value]="s" [class.is-invalid]='sexoNoValido'>
+                              {{s}}
+                            </mat-radio-button>
+                            <mat-error *ngIf='sexoNoValido' class="text-danger col-lg-6">
+                              <strong>Seleccioná el sexo como
+                                figura en el dni</strong>
+                            </mat-error>
+                          </mat-radio-group>
+                        </div>
+                      </div>
+                      <ng-container *ngIf='!ocultarBusqueda'>
+                        <button matt-buton class="btn btn-success mr-2" (click)="validarDNI()">Validar
+                          identidad</button>
+                      </ng-container>
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-2">
+                      <img id="foto" *ngIf="docForm.get('datosPersonales.foto').value"
+                        [src]="docForm.get('datosPersonales.foto').value" class="pequeña" />
+
+                    </div>
+                  </div>
+                  <ng-container *ngIf="ocultarBusqueda">
+                    <h4 class="mb-10 font-weight-bold text-dark">Datos Personales -
+                      Renaper</h4>
+
+                    <div class="row">
+                      <div class="col-xl-3 col-xs-3 col-sm-3 col-nombre padding-1">
+
+                        <mat-form-field>
+                          <mat-label>Nombre</mat-label>
+                          <input type="text" class="form-control" matInput formControlName="nombre"
+                            [class.is-invalid]='dniNoValido' placeholder="Nombre">
+                          <mat-error *ngIf='dniNoValido' class="text-danger col-lg-6">
+                            <strong> Es necesario completar el campo.</strong>
+                          </mat-error>
+                        </mat-form-field>
+                      </div>
+
+                      <div class="col-xl-3 col-xs-3 col-sm-3 col-apellido padding-1">
+                        <div class="">
+                          <mat-form-field class="example-full-width mb-3">
+                            <mat-label>Apellido</mat-label>
+                            <input type="text" class="form-control" matInput formControlName="apellido" placeholder=""
+                              readonly>
+                          </mat-form-field>
+                        </div>
+                      </div>
+                      <div class="col-xl-1 col-xs-1 col-sm-1 col-edad padding-1">
+                        <div class="">
+                          <mat-form-field class="DP-full-width">
+                            <mat-label>Edad</mat-label>
+                            <input type="text" class="form-control" matInput formControlName="edad" placeholder=""
+                              readonly>
+                          </mat-form-field>
+                        </div>
+                      </div>
+                      <div class="col-xl-1 col-xs-1 col-sm-1 col-sexo padding-1">
+                        <div class="">
+                          <mat-form-field class="DP-full-width">
+                            <mat-label>Genero</mat-label>
+                            <mat-select formControlName="genero">
+                              <mat-option *ngFor="let gen of genero" [value]="gen">
+                                {{gen}}
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                        </div>
+                      </div>
+                      <div class="col-xl-2 col-xs-2 col-sm-2 col-telefono padding-1">
+                        <div class="">
+                          <mat-form-field lass="DP-full-width">
+                            <mat-label>Estado Civil</mat-label>
+                            <mat-select formControlName="estadoCivil">
+                              <mat-option *ngFor="let ec of estadoCivil" [value]="ec">
+                                {{ec}}
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-container>
+                </div>
+                <ng-container *ngIf='verStep2'>
+                  <button mat-button matStepperNext>Siguiente</button>
+                </ng-container>
+
+              </mat-step>
+              <mat-step [stepControl]="docForm" state="home">
+                <ng-template matStepLabel>Direccion</ng-template>
+                <div class="mb-15" formGroupName="direccion">
+                  <div class="col-12 my10">
+                    <div class="row">
+                      <div class="col-xl-3 col-xs-3 col-sm-3 col-localidad padding-1">
+
+                        <div class="">
+                          <mat-form-field class="DP-full-width">
+                            <mat-label>Provincia</mat-label>
+                            <mat-select formControlName="provincia">
+                              <mat-option *ngFor="let prov of provincia" (click)="provSelect(prov)" [value]="prov">
+                                {{ prov }}
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                          <div *ngIf="campoLocalidad.errors && campoLocalidad.touched" class="text-danger">
+                            <small *ngIf="campoLocalidad.hasError('required')">
+                              La Localidad es Requerida
+                            </small>
+                          </div>
+
+                          <span class="form-text text-muted"></span>
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-xs-3 col-sm-3 col-localidad padding-1">
+                        <div class="">
+                          <mat-form-field class="DP-full-width">
+                            <mat-label>localidad</mat-label>
+                            <mat-select formControlName="localidad">
+                              <mat-option *ngFor="let localidad of localidades" [value]="localidad.localidad_nombre">
+                                {{localidad.localidad_nombre}}
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+
+                          <div *ngIf="campoLocalidad.errors && campoLocalidad.touched" class="text-danger">
+                            <small *ngIf="campoLocalidad.hasError('required')">
+                              La Localidad es Requerida
+                            </small>
+                          </div>
+
+                          <span class="form-text text-muted"></span>
+                        </div>
+                      </div>
+
+
+                      <div class="col-xl-4 col-xs-4 col-sm-4 col-calle padding-1">
+                        <div class="">
+                          <mat-form-field class="DP-full-width">
+                            <mat-label> Calle</mat-label>
+                            <input class="form-control form-control-solid" matInput type="text" formControlName="calle"
+                              name="calle" placeholder="" autocomplete="nope" />
+                          </mat-form-field>
+                          <div *ngIf="campoCalle.errors && campoCalle.touched" class="text-danger">
+                            <small *ngIf="campoCalle.hasError('required')">
+                              La calle es requerida
+                            </small>
+                            <small *ngIf="campoCalle.hasError('maxLength')">
+                              La calle puede tener 25 dígitos
+                            </small>
+                          </div>
+                          <span class="form-text text-muted"></span>
+                        </div>
+                      </div>
+
+                      <div class="col-xl-1 col-xs-1 col-sm-1 col-numero padding-1">
+                        <div class="">
+                          <mat-form-field class="DP-full-width">
+                            <mat-label>Nro</mat-label>
+                            <input class="form-control form-control-solid" matInput type="text" formControlName="numero"
+                              name="numero" placeholder="" />
+                          </mat-form-field>
+                          <div *ngIf="campoNumero.errors && campoNumero.touched" class="text-danger">
+                            <small *ngIf="campoNumero.hasError('required')">
+                              El Número es requerido
+                            </small>
+                            <small *ngIf="campoNumero.hasError('maxLength')">
+                              El Número puede tener 4 dígitos
+                            </small>
+                          </div>
+                          <span class="form-text text-muted"></span>
+                        </div>
+                      </div>
+                      <div class="col-xl-1 col-xs-1 col-sm-1 col-piso padding-1">
+                        <div class="">
+                          <mat-form-field class="DP-full-width">
+                            <mat-label>Piso</mat-label>
+                            <input class="form-control form-control-solid" type="text" matInput formControlName="piso"
+                              name="piso" placeholder="" />
+                          </mat-form-field>
+                          <div *ngIf="campoPiso.errors && campoPiso.touched" class="text-danger">
+                            <small *ngIf="campoPiso.hasError('required')">
+                              El Piso es requerido
+                            </small>
+                            <small *ngIf="campoPiso.hasError('maxLength')">
+                              El Piso puede tener 4 dígitos
+                            </small>
+                          </div>
+
+
+                          <span class="form-text text-muted"></span>
+                        </div>
+                      </div>
+
+                      <div class="col-xl-1 col-xs-1 col-sm-1 col-departamento padding-1">
+                        <div class="">
+                          <mat-form-field class="DP-full-width">
+                            <mat-label>Dpto</mat-label>
+                            <input class="form-control form-control-solid" type="text" matInput formControlName="dpto"
+                              name="departamento" placeholder="" />
+                          </mat-form-field>
+                          <div *ngIf="campoDepto.errors && campoDepto.touched" class="text-danger">
+                            <small *ngIf="campoDepto.hasError('required')">
+                              El Depto es requerido
+                            </small>
+                            <small *ngIf="campoDepto.hasError('maxLength')">
+                              El Depto puede tener 1 dígitos
+                            </small>
+                          </div>
+                          <span class="form-text text-muted"></span>
+                        </div>
+                      </div>
+                      <div class="col-xl-1 col-xs-1 col-sm-1 col-departamento padding-1">
+                        <div class="">
+                          <mat-form-field class="DP-full-width">
+
+                            <mat-label>Block</mat-label>
+                            <input class="form-control form-control-solid" type="text" matInput formControlName="block"
+                              name="departamento" placeholder="" />
+                          </mat-form-field>
+                          <div *ngIf="campoDepto.errors && campoDepto.touched" class="text-danger">
+                            <small *ngIf="campoDepto.hasError('required')">
+                              El Depto es requerido
+                            </small>
+                            <small *ngIf="campoDepto.hasError('maxLength')">
+                              El Depto puede tener 1 dígitos
+                            </small>
+                          </div>
+                          <span class="form-text text-muted"></span>
+                        </div>
+                      </div>
+
+                      <div class="col-2 col-cpostal padding-1">
+                        <div class="">
+                          <mat-form-field class="DP-full-width">
+                            <mat-label>CP</mat-label>
+                            <input class="form-control form-control-solid" type="text" matInput
+                              formControlName="codigoPostal" name="codigoPostal" placeholder="" />
+                          </mat-form-field>
+                          <span class="form-text text-muted"></span>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+              </mat-step>
+              <mat-step [stepControl]="docForm" state="phone">
+                <ng-template matStepLabel>Datos de contacto</ng-template>
+                <div class="mb-15" formGroupName="datosContacto">
+                  <div class="col-12 my10">
+                    <div class="row">
+                      <div class="col-xl-2 col-xs-2 col-sm-2 col-telefono padding-1">
+                        <div class="">
+                          <mat-form-field class="DP-full-width">
+                            <mat-label>Teléfono</mat-label>
+                            <input class="form-control form-control-solid is-danger" type="text" matInput
+                              formControlName="telefono" name="telefono" placeholder="10 dígitos" autocomplete="nope" />
+                          </mat-form-field>
+
+                        </div>
+                      </div>
+                      <div class="col-xl-2 col-xs-2 col-sm-2 col-telefono padding-1">
+                        <div class="">
+                          <mat-form-field class="DP-full-width">
+                            <mat-label>Celular</mat-label>
+                            <input class="form-control form-control-solid is-danger" type="text"
+                              formControlName="celular" matInput name="telefono" placeholder="10 dígitos" />
+                          </mat-form-field>
+
+                        </div>
+                      </div>
+                      <div class="col-xl-4 col-xs-4 col-sm-4 col-calle padding-1">
+                        <div class="">
+                          <mat-form-field class="DP-full-width">
+                            <mat-label> Correo electronico</mat-label>
+                            <input class="form-control form-control-solid" matInput type="email" formControlName="email"
+                              matInput name="email" placeholder="" />
+                          </mat-form-field>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </mat-step>
+              <mat-step [stepControl]="docForm" state="fa fa-university">
+                <ng-template matStepLabel>Datos academicos</ng-template>
+                <div class="mb-15" formGroupName="formacionAcacemica">
+                  <div class="col-12 ">
+                    <div class="row">
+                      <div class="col-xl-3 col-xs-3 col-sm-3 col-nombre padding-1">
+
+                        <mat-form-field class="example-full-width mb-3">
+                          <mat-label>Profesion</mat-label>
+                          <input type="text" class="form-control" matInput formControlName="profesion"
+                            placeholder="Profesion">
+                        </mat-form-field>
+                      </div>
+                      <div class="col-xl-3 col-xs-3 col-sm-3 col-nombre padding-1">
+                        <mat-form-field class="example-full-width mb-3">
+                          <mat-label>Entidad formadora</mat-label>
+                          <input type="text" class="form-control" matInput formControlName="entidadFormadora"
+                            placeholder="Entidad">
+                        </mat-form-field>
+                      </div>
+
+                      <div class="col-xl-3 col-xs-3 col-sm-3 col-apellido padding-1">
+                        <div class="">
+                          <mat-form-field class="example-full-width mb-3">
+                            <mat-label>Titulo obtenido</mat-label>
+                            <input type="text" class="form-control" matInput formControlName="titulo"
+                              placeholder="titulo">
+                          </mat-form-field>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-xl-3 col-xs-3 col-sm-3 col-nombre padding-1">
+                        <div class="">
+                          <mat-form-field class="example-full-width mb-3" appearance="fill">
+                            <mat-label>Fecha de Titulo</mat-label>
+                            <input matInput [matDatepicker]="picker" formControlName="fechaTitulo" required>
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                          </mat-form-field>
+
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-xs-3 col-sm-3 col-nombre padding-1">
+                        <div class="">
+                          <mat-form-field appearance="fill" class="example-full-width mb-3">
+                            <mat-label>Fecha de egresado</mat-label>
+                            <input matInput [matDatepicker]="picker1" formControlName="fechaEgreso">
+                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                            <mat-datepicker #picker1></mat-datepicker>
+                          </mat-form-field>
+
+                        </div>
+                      </div>
+                      <div class="col-xl-3 col-xs-3 col-sm-3 col-nombre padding-1">
+                        <div class="">
+                          <mat-form-field appearance="fill" class="example-full-width mb-3">
+                            <mat-label> Número de matricula profesional.</mat-label>
+                            <input class="form-control form-control-solid" matInput type="text"
+                              formControlName="matriculado" matInput name="matriculado" placeholder="" />
+                          </mat-form-field>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
+                      <button class="btn-space" [disabled]="!docForm.valid " mat-raised-button
+                        color="primary">Guardar</button>
+                      <button type="button" mat-button>Cancelar</button>
+                    </div>
+                  </div>
+                </div>
+
+              </mat-step>
+
+            </mat-vertical-stepper>
+
+          </form>
+
+
+
+
+          <!-- <div class="body">
             <form class="m-4" [formGroup]="docForm" (ngSubmit)="onSubmit()">
               <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 mb-3">
@@ -175,7 +571,7 @@
                 </div>
               </div>
             </form>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

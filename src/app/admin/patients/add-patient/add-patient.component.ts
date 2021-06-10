@@ -8,7 +8,6 @@ import { ValidarPersonaService } from "src/app/core/service/renaper/validar.pers
 import Swal from "sweetalert2";
 import * as moment from "moment";
 import { debounceTime } from "rxjs/operators";
-import { Localidades } from "src/app/core/models/localidades.interface";
 import { ProvLocService } from "src/app/core/service/prov-loc.service";
 import { PacienteService } from "src/app/core/service/pacientes/paciente.service";
 import { Router } from "@angular/router";
@@ -18,9 +17,9 @@ import { Router } from "@angular/router";
   templateUrl: "./add-patient.component.html",
   styleUrls: ["./add-patient.component.css"],
 })
-export class AddPatientComponent {
-  public fechahoy: string = moment().format("YYYY-MM-DD");
+export class AddPatientComponent implements OnInit {
   public fechamin: string = "2020-03-01";
+  public fechahoy: string = moment().format("YYYY-MM-DD");
   pacienteForm: FormGroup;
   datosRenaper: {};
   verStep2 = false;
