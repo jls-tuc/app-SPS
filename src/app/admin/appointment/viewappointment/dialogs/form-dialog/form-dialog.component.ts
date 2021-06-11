@@ -1,5 +1,5 @@
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
-import { Component, Inject } from "@angular/core";
+import { ChangeDetectorRef, Component, Inject } from "@angular/core";
 import { AppointmentService } from "../../appointment.service";
 import {
   FormControl,
@@ -10,10 +10,12 @@ import {
 import { Appointment } from "../../appointment.model";
 import { MAT_DATE_LOCALE } from "@angular/material/core";
 import { formatDate } from "@angular/common";
+import { PacienteService } from "src/app/core/service/pacientes/paciente.service";
+
 @Component({
   selector: "app-form-dialog",
   templateUrl: "./form-dialog.component.html",
-  styleUrls: ["./form-dialog.component.sass"],
+  styleUrls: ["./form-dialog.component.css"],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: "en-GB" }],
 })
 export class FormDialogComponent {
@@ -21,11 +23,24 @@ export class FormDialogComponent {
   dialogTitle: string;
   appointmentForm: FormGroup;
   appointment: Appointment;
+  cargarTurno: boolean = false;
+
+  lugaresAtencion: string[] = [
+    "Consultorios en Neuquén Capital",
+    "Consultorios en Añelo",
+    "Consultorios en Buta Ranquil",
+    "Clínica y Maternidad Eva Perón",
+    "Clínica y Maternidad Juan Domingo Perón",
+    "Sanatorio Plaza Huincul",
+  ];
+
   constructor(
     public dialogRef: MatDialogRef<FormDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     public appointmentService: AppointmentService,
-    private fb: FormBuilder
+    public pacienteService: PacienteService,
+    private fb: FormBuilder,
+    private cdr: ChangeDetectorRef
   ) {
     // Set the defaults
     this.action = data.action;
@@ -34,49 +49,45 @@ export class FormDialogComponent {
       this.dialogTitle = data.appointment.name;
       this.appointment = data.appointment;
     } else {
-      this.dialogTitle = "New Appointment";
-      this.appointment = new Appointment({});
+      this.dialogTitle = "Cargar Turno";
+      this.createContactForm();
     }
-    this.appointmentForm = this.createContactForm();
   }
-  formControl = new FormControl("", [
-    Validators.required,
-    // Validators.email,
-  ]);
-  getErrorMessage() {
-    return this.formControl.hasError("required")
-      ? "Required field"
-      : this.formControl.hasError("email")
-      ? "Not a valid email"
-      : "";
-  }
-  createContactForm(): FormGroup {
-    return this.fb.group({
-      id: [this.appointment.id],
-      img: [this.appointment.img],
-      name: [this.appointment.name, [Validators.required]],
-      email: [
-        this.appointment.email,
-        [Validators.required, Validators.email, Validators.minLength(5)],
-      ],
-      gender: [this.appointment.gender],
-      date: [
-        formatDate(this.appointment.date, "yyyy-MM-dd", "en"),
-        [Validators.required],
-      ],
-      time: [this.appointment.time, [Validators.required]],
-      mobile: [this.appointment.mobile, [Validators.required]],
-      doctor: [this.appointment.doctor, [Validators.required]],
-      injury: [this.appointment.injury],
+
+  ngOnInit() {}
+
+  createContactForm(data?) {
+    this.appointmentForm = this.fb.group({
+      img: [data ? data.datosPersonales.foto : ""],
+      documento: [data ? data.dni : ""],
+      nombre: [data ? data.datosPersonales.nombre : ""],
+      apellido: [data ? data.datosPersonales.apellido : ""],
+      email: [data ? data.datosContacto.email : ""],
+      mobile: [data ? data.datosContacto.celular : ""],
+      lugarTurno: [""],
+      gender: [data ? data.sexo : ""],
+      date: ["", [Validators.required]],
+      time: ["", [Validators.required]],
+
+      doctor: ["", [Validators.required]],
+      injury: [""],
     });
   }
+
+  cargarPaciente() {
+    const dni = `dni=${this.appointmentForm.get("documento").value}`;
+    console.log("dni", dni);
+    this.pacienteService.getDni(dni).subscribe((resp: any) => {
+      console.log("res", resp);
+      this.createContactForm(resp.persona[0]);
+      this.cargarTurno = true;
+    });
+  }
+
   submit() {
     // emppty stuff
   }
   onNoClick(): void {
     this.dialogRef.close();
-  }
-  public confirmAdd(): void {
-    this.appointmentService.addAppointment(this.appointmentForm.getRawValue());
   }
 }
