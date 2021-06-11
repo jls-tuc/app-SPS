@@ -7,7 +7,12 @@ const API_USERS_URL = `${environment.apiUrl}/paciente`;
 })
 export class PacienteService {
   constructor(public http: HttpClient) {}
+
   crearForm(data: any) {
     return this.http.post(API_USERS_URL, data);
+  }
+
+  getDni(data: any) {
+    return this.http.get(API_USERS_URL + `/?${data}`);
   }
 }
